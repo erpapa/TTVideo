@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA7CBFBB201460B8001172AE /* MethodTraceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA7CBFBA201460B8001172AE /* MethodTraceConfig.plist */; };
+		EA7CBFBE201460B8001172AE /* put ipa or app here in Resources */ = {isa = PBXBuildFile; fileRef = EA7CBFBD201460B8001172AE /* put ipa or app here */; };
+		EA7CBFC6201460B8001172AE /* libTTVideoDylib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA7CBFC5201460B8001172AE /* libTTVideoDylib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EA7CBFCB201460B8001172AE /* Cycript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7CBFCA201460B8001172AE /* Cycript.framework */; };
+		EA7CBFCD201460B8001172AE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7CBFCC201460B8001172AE /* JavaScriptCore.framework */; };
+		EA7CBFCF201460B8001172AE /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7CBFCE201460B8001172AE /* RevealServer.framework */; };
+		EA7CBFD1201460B8001172AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7CBFD0201460B8001172AE /* Foundation.framework */; };
+		EA7CBFD3201460B8001172AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7CBFD2201460B8001172AE /* UIKit.framework */; };
+		EA7CBFD7201460B8001172AE /* ANYMethodLog.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7CBFD6201460B8001172AE /* ANYMethodLog.h */; };
+		EA7CBFD9201460B8001172AE /* ANYMethodLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7CBFD8201460B8001172AE /* ANYMethodLog.m */; };
+		EA7CBFDB201460B8001172AE /* MethodTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7CBFDA201460B8001172AE /* MethodTrace.h */; };
+		EA7CBFDD201460B8001172AE /* MethodTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7CBFDC201460B8001172AE /* MethodTrace.m */; };
+		EA7CBFE2201460B8001172AE /* AntiAntiDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7CBFE1201460B8001172AE /* AntiAntiDebug.m */; };
+		EA7CBFE5201460B8001172AE /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = EA7CBFE4201460B8001172AE /* fishhook.c */; };
+		EA7CBFE7201460B8001172AE /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7CBFE6201460B8001172AE /* fishhook.h */; };
+		EA7CBFEA201460B8001172AE /* TTVideoDylib.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA7CBFE9201460B8001172AE /* TTVideoDylib.mm */; };
+		EA7CBFEC201460B8001172AE /* TTVideoDylib.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7CBFEB201460B8001172AE /* TTVideoDylib.h */; };
+		EA7CBFEE201460B8001172AE /* TTVideoDylib.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7CBFED201460B8001172AE /* TTVideoDylib.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA7CBFC7201460B8001172AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7CBFAC201460B7001172AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA7CBFC4201460B8001172AE;
+			remoteInfo = TTVideoDylib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA7CBFB4201460B7001172AE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA7CBFC6201460B8001172AE /* libTTVideoDylib.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EA7CBFB7201460B8001172AE /* TTVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA7CBFBA201460B8001172AE /* MethodTraceConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MethodTraceConfig.plist; sourceTree = "<group>"; };
+		EA7CBFBD201460B8001172AE /* put ipa or app here */ = {isa = PBXFileReference; lastKnownFileType = text; name = "put ipa or app here"; path = "TargetApp/put ipa or app here"; sourceTree = "<group>"; };
+		EA7CBFBF201460B8001172AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA7CBFC5201460B8001172AE /* libTTVideoDylib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libTTVideoDylib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA7CBFCA201460B8001172AE /* Cycript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cycript.framework; path = Library/Frameworks/Cycript.framework; sourceTree = DEVELOPER_DIR; };
+		EA7CBFCC201460B8001172AE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EA7CBFCE201460B8001172AE /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = Library/Frameworks/RevealServer.framework; sourceTree = DEVELOPER_DIR; };
+		EA7CBFD0201460B8001172AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA7CBFD2201460B8001172AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA7CBFD6201460B8001172AE /* ANYMethodLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ANYMethodLog.h; path = MethodTrace/ANYMethodLog.h; sourceTree = "<group>"; };
+		EA7CBFD8201460B8001172AE /* ANYMethodLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ANYMethodLog.m; path = MethodTrace/ANYMethodLog.m; sourceTree = "<group>"; };
+		EA7CBFDA201460B8001172AE /* MethodTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MethodTrace.h; path = MethodTrace/MethodTrace.h; sourceTree = "<group>"; };
+		EA7CBFDC201460B8001172AE /* MethodTrace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MethodTrace.m; path = MethodTrace/MethodTrace.m; sourceTree = "<group>"; };
+		EA7CBFDF201460B8001172AE /* TTVideoDylib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TTVideoDylib-Prefix.pch"; sourceTree = "<group>"; };
+		EA7CBFE1201460B8001172AE /* AntiAntiDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AntiAntiDebug.m; path = AntiAntiDebug/AntiAntiDebug.m; sourceTree = "<group>"; };
+		EA7CBFE4201460B8001172AE /* fishhook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = fishhook/fishhook.c; sourceTree = "<group>"; };
+		EA7CBFE6201460B8001172AE /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = fishhook/fishhook.h; sourceTree = "<group>"; };
+		EA7CBFE8201460B8001172AE /* TTVideoDylib.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = TTVideoDylib.xm; sourceTree = "<group>"; };
+		EA7CBFE9201460B8001172AE /* TTVideoDylib.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TTVideoDylib.mm; sourceTree = "<group>"; };
+		EA7CBFEB201460B8001172AE /* TTVideoDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTVideoDylib.h; sourceTree = "<group>"; };
+		EA7CBFED201460B8001172AE /* TTVideoDylib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTVideoDylib.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA7CBFB1201460B7001172AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA7CBFC2201460B8001172AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7CBFCD201460B8001172AE /* JavaScriptCore.framework in Frameworks */,
+				EA7CBFCF201460B8001172AE /* RevealServer.framework in Frameworks */,
+				EA7CBFCB201460B8001172AE /* Cycript.framework in Frameworks */,
+				EA7CBFD1201460B8001172AE /* Foundation.framework in Frameworks */,
+				EA7CBFD3201460B8001172AE /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA7CBFAB201460B7001172AE = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFB9201460B8001172AE /* TTVideo */,
+				EA7CBFD4201460B8001172AE /* TTVideoDylib */,
+				EA7CBFC9201460B8001172AE /* Frameworks */,
+				EA7CBFB8201460B8001172AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA7CBFB8201460B8001172AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFB7201460B8001172AE /* TTVideo.app */,
+				EA7CBFC5201460B8001172AE /* libTTVideoDylib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA7CBFB9201460B8001172AE /* TTVideo */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFBA201460B8001172AE /* MethodTraceConfig.plist */,
+				EA7CBFBF201460B8001172AE /* Info.plist */,
+				EA7CBFBC201460B8001172AE /* TargetApp */,
+			);
+			path = TTVideo;
+			sourceTree = "<group>";
+		};
+		EA7CBFBC201460B8001172AE /* TargetApp */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFBD201460B8001172AE /* put ipa or app here */,
+			);
+			name = TargetApp;
+			sourceTree = "<group>";
+		};
+		EA7CBFC9201460B8001172AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFCA201460B8001172AE /* Cycript.framework */,
+				EA7CBFCC201460B8001172AE /* JavaScriptCore.framework */,
+				EA7CBFCE201460B8001172AE /* RevealServer.framework */,
+				EA7CBFD0201460B8001172AE /* Foundation.framework */,
+				EA7CBFD2201460B8001172AE /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA7CBFD4201460B8001172AE /* TTVideoDylib */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFE8201460B8001172AE /* TTVideoDylib.xm */,
+				EA7CBFE9201460B8001172AE /* TTVideoDylib.mm */,
+				EA7CBFEB201460B8001172AE /* TTVideoDylib.h */,
+				EA7CBFED201460B8001172AE /* TTVideoDylib.m */,
+				EA7CBFD5201460B8001172AE /* MethodTrace */,
+				EA7CBFE0201460B8001172AE /* AntiAntiDebug */,
+				EA7CBFE3201460B8001172AE /* fishhook */,
+				EA7CBFDE201460B8001172AE /* Supporting Files */,
+			);
+			path = TTVideoDylib;
+			sourceTree = "<group>";
+		};
+		EA7CBFD5201460B8001172AE /* MethodTrace */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFD6201460B8001172AE /* ANYMethodLog.h */,
+				EA7CBFD8201460B8001172AE /* ANYMethodLog.m */,
+				EA7CBFDA201460B8001172AE /* MethodTrace.h */,
+				EA7CBFDC201460B8001172AE /* MethodTrace.m */,
+			);
+			name = MethodTrace;
+			sourceTree = "<group>";
+		};
+		EA7CBFDE201460B8001172AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFDF201460B8001172AE /* TTVideoDylib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA7CBFE0201460B8001172AE /* AntiAntiDebug */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFE1201460B8001172AE /* AntiAntiDebug.m */,
+			);
+			name = AntiAntiDebug;
+			sourceTree = "<group>";
+		};
+		EA7CBFE3201460B8001172AE /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CBFE4201460B8001172AE /* fishhook.c */,
+				EA7CBFE6201460B8001172AE /* fishhook.h */,
+			);
+			name = fishhook;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EA7CBFC3201460B8001172AE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7CBFD7201460B8001172AE /* ANYMethodLog.h in Headers */,
+				EA7CBFDB201460B8001172AE /* MethodTrace.h in Headers */,
+				EA7CBFE7201460B8001172AE /* fishhook.h in Headers */,
+				EA7CBFEC201460B8001172AE /* TTVideoDylib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EA7CBFB6201460B7001172AE /* TTVideo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA7CBFF4201460B8001172AE /* Build configuration list for PBXNativeTarget "TTVideo" */;
+			buildPhases = (
+				EA7CBFB0201460B7001172AE /* Sources */,
+				EA7CBFB1201460B7001172AE /* Frameworks */,
+				EA7CBFB2201460B7001172AE /* ShellScript */,
+				EA7CBFB3201460B7001172AE /* Resources */,
+				EA7CBFB4201460B7001172AE /* CopyFiles */,
+				EA7CBFB5201460B7001172AE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA7CBFC8201460B8001172AE /* PBXTargetDependency */,
+			);
+			name = TTVideo;
+			productName = TTVideo;
+			productReference = EA7CBFB7201460B8001172AE /* TTVideo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA7CBFC4201460B8001172AE /* TTVideoDylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA7CBFF1201460B8001172AE /* Build configuration list for PBXNativeTarget "TTVideoDylib" */;
+			buildPhases = (
+				EA7CBFC0201460B8001172AE /* ShellScript */,
+				EA7CBFC1201460B8001172AE /* Sources */,
+				EA7CBFC2201460B8001172AE /* Frameworks */,
+				EA7CBFC3201460B8001172AE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TTVideoDylib;
+			productName = TTVideoDylib;
+			productReference = EA7CBFC5201460B8001172AE /* libTTVideoDylib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA7CBFAC201460B7001172AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = erpapa;
+				TargetAttributes = {
+					EA7CBFB6201460B7001172AE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					EA7CBFC4201460B8001172AE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EA7CBFAF201460B7001172AE /* Build configuration list for PBXProject "TTVideo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EA7CBFAB201460B7001172AE;
+			productRefGroup = EA7CBFB8201460B8001172AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA7CBFB6201460B7001172AE /* TTVideo */,
+				EA7CBFC4201460B8001172AE /* TTVideoDylib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA7CBFB3201460B7001172AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7CBFBE201460B8001172AE /* put ipa or app here in Resources */,
+				EA7CBFBB201460B8001172AE /* MethodTraceConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EA7CBFB2201460B7001172AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /opt/MonkeyDev/Tools/pack.sh;
+		};
+		EA7CBFB5201460B7001172AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/Tools/pack.sh codesign";
+		};
+		EA7CBFC0201460B8001172AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA7CBFB0201460B7001172AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA7CBFC1201460B8001172AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7CBFE2201460B8001172AE /* AntiAntiDebug.m in Sources */,
+				EA7CBFDD201460B8001172AE /* MethodTrace.m in Sources */,
+				EA7CBFE5201460B8001172AE /* fishhook.c in Sources */,
+				EA7CBFEA201460B8001172AE /* TTVideoDylib.mm in Sources */,
+				EA7CBFEE201460B8001172AE /* TTVideoDylib.m in Sources */,
+				EA7CBFD9201460B8001172AE /* ANYMethodLog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA7CBFC8201460B8001172AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA7CBFC4201460B8001172AE /* TTVideoDylib */;
+			targetProxy = EA7CBFC7201460B8001172AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EA7CBFEF201460B8001172AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA7CBFF0201460B8001172AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA7CBFF2201460B8001172AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5T5EGX8G8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTVideoDylib/TTVideoDylib-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libTTVideoDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"TTVideoDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-lsubstrate",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		EA7CBFF3201460B8001172AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = P5T5EGX8G8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTVideoDylib/TTVideoDylib-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libTTVideoDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"TTVideoDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-lsubstrate",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA7CBFF5201460B8001172AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5T5EGX8G8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = TTVideo/Info.plist;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.erpapa.TTVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA7CBFF6201460B8001172AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5T5EGX8G8;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = TTVideo/Info.plist;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.erpapa.TTVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA7CBFAF201460B7001172AE /* Build configuration list for PBXProject "TTVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA7CBFEF201460B8001172AE /* Debug */,
+				EA7CBFF0201460B8001172AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA7CBFF1201460B8001172AE /* Build configuration list for PBXNativeTarget "TTVideoDylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA7CBFF2201460B8001172AE /* Debug */,
+				EA7CBFF3201460B8001172AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA7CBFF4201460B8001172AE /* Build configuration list for PBXNativeTarget "TTVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA7CBFF5201460B8001172AE /* Debug */,
+				EA7CBFF6201460B8001172AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA7CBFAC201460B7001172AE /* Project object */;
+}
