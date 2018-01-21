@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA5B906D201493DF000BF668 /* TTFSogouResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5B906B201493DF000BF668 /* TTFSogouResultView.h */; };
+		EA5B906E201493DF000BF668 /* TTFSogouResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5B906C201493DF000BF668 /* TTFSogouResultView.m */; };
+		EA5B90752014C1DF000BF668 /* XXLinkLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5B90732014C1DF000BF668 /* XXLinkLabel.m */; };
+		EA5B90762014C1DF000BF668 /* XXLinkLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5B90742014C1DF000BF668 /* XXLinkLabel.h */; };
 		EA7CBFBB201460B8001172AE /* MethodTraceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA7CBFBA201460B8001172AE /* MethodTraceConfig.plist */; };
 		EA7CBFBE201460B8001172AE /* put ipa or app here in Resources */ = {isa = PBXBuildFile; fileRef = EA7CBFBD201460B8001172AE /* put ipa or app here */; };
 		EA7CBFC6201460B8001172AE /* libTTVideoDylib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA7CBFC5201460B8001172AE /* libTTVideoDylib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -51,6 +55,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA5B906B201493DF000BF668 /* TTFSogouResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTFSogouResultView.h; sourceTree = "<group>"; };
+		EA5B906C201493DF000BF668 /* TTFSogouResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTFSogouResultView.m; sourceTree = "<group>"; };
+		EA5B90732014C1DF000BF668 /* XXLinkLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLinkLabel.m; sourceTree = "<group>"; };
+		EA5B90742014C1DF000BF668 /* XXLinkLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLinkLabel.h; sourceTree = "<group>"; };
 		EA7CBFB7201460B8001172AE /* TTVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7CBFBA201460B8001172AE /* MethodTraceConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MethodTraceConfig.plist; sourceTree = "<group>"; };
 		EA7CBFBD201460B8001172AE /* put ipa or app here */ = {isa = PBXFileReference; lastKnownFileType = text; name = "put ipa or app here"; path = "TargetApp/put ipa or app here"; sourceTree = "<group>"; };
@@ -69,7 +77,7 @@
 		EA7CBFE1201460B8001172AE /* AntiAntiDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AntiAntiDebug.m; path = AntiAntiDebug/AntiAntiDebug.m; sourceTree = "<group>"; };
 		EA7CBFE4201460B8001172AE /* fishhook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = fishhook/fishhook.c; sourceTree = "<group>"; };
 		EA7CBFE6201460B8001172AE /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = fishhook/fishhook.h; sourceTree = "<group>"; };
-		EA7CBFE8201460B8001172AE /* TTVideoDylib.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = TTVideoDylib.xm; sourceTree = "<group>"; };
+		EA7CBFE8201460B8001172AE /* TTVideoDylib.xm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TTVideoDylib.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EA7CBFE9201460B8001172AE /* TTVideoDylib.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TTVideoDylib.mm; sourceTree = "<group>"; };
 		EA7CBFEB201460B8001172AE /* TTVideoDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTVideoDylib.h; sourceTree = "<group>"; };
 		EA7CBFED201460B8001172AE /* TTVideoDylib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTVideoDylib.m; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 				EA7CBFE9201460B8001172AE /* TTVideoDylib.mm */,
 				EA7CBFEB201460B8001172AE /* TTVideoDylib.h */,
 				EA7CBFED201460B8001172AE /* TTVideoDylib.m */,
+				EA5B90742014C1DF000BF668 /* XXLinkLabel.h */,
+				EA5B90732014C1DF000BF668 /* XXLinkLabel.m */,
+				EA5B906B201493DF000BF668 /* TTFSogouResultView.h */,
+				EA5B906C201493DF000BF668 /* TTFSogouResultView.m */,
 				EA7CBFD5201460B8001172AE /* MethodTrace */,
 				EA7CBFE0201460B8001172AE /* AntiAntiDebug */,
 				EA7CBFE3201460B8001172AE /* fishhook */,
@@ -208,7 +220,9 @@
 				EA7CBFD7201460B8001172AE /* ANYMethodLog.h in Headers */,
 				EA7CBFDB201460B8001172AE /* MethodTrace.h in Headers */,
 				EA7CBFE7201460B8001172AE /* fishhook.h in Headers */,
+				EA5B906D201493DF000BF668 /* TTFSogouResultView.h in Headers */,
 				EA7CBFEC201460B8001172AE /* TTVideoDylib.h in Headers */,
+				EA5B90762014C1DF000BF668 /* XXLinkLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,9 +373,11 @@
 			files = (
 				EA7CBFE2201460B8001172AE /* AntiAntiDebug.m in Sources */,
 				EA7CBFDD201460B8001172AE /* MethodTrace.m in Sources */,
+				EA5B906E201493DF000BF668 /* TTFSogouResultView.m in Sources */,
 				EA7CBFE5201460B8001172AE /* fishhook.c in Sources */,
 				EA7CBFEA201460B8001172AE /* TTVideoDylib.mm in Sources */,
 				EA7CBFEE201460B8001172AE /* TTVideoDylib.m in Sources */,
+				EA5B90752014C1DF000BF668 /* XXLinkLabel.m in Sources */,
 				EA7CBFD9201460B8001172AE /* ANYMethodLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
