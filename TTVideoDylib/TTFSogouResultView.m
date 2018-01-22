@@ -7,7 +7,8 @@
 //
 
 #import "TTFSogouResultView.h"
-#import "XXLinkLabel.h"
+#import "TTTAttributedLabel.h"
+#import "TTFPoPWebView.h"
 
 NSInteger const kTTFSogouResultViewTag = 10241024;
 NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdentifier";
@@ -21,33 +22,43 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
         
+        self.cardView = [[UIView alloc] initWithFrame:self.bounds];
+        self.cardView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.15];
+        self.cardView.layer.cornerRadius = 5.0;
+        self.cardView.layer.masksToBounds = YES;
+        [self.contentView addSubview:self.cardView];
+        
         self.questionLable = [[UILabel alloc] init];
         self.questionLable.numberOfLines = 0;
         self.questionLable.font = [UIFont systemFontOfSize:16];
         self.questionLable.textColor = [UIColor whiteColor];
-        [self addSubview:self.questionLable];
+        [self.cardView addSubview:self.questionLable];
         
-        self.answerLable = [[XXLinkLabel alloc] init];
+        self.answerLable = [[TTTAttributedLabel alloc] initWithFrame:self.bounds];
         self.answerLable.numberOfLines = 0;
         self.answerLable.font = [UIFont systemFontOfSize:20];
         self.answerLable.textColor = [UIColor colorWithRed:252/255.0 green:217/255.0 blue:28/255.0 alpha:1.0];
-        self.answerLable.linkTextColor = [UIColor whiteColor];
-        self.answerLable.selectedBackgroudColor = [UIColor clearColor];
-        [self addSubview:self.answerLable];
+        self.answerLable.highlightedTextColor = [UIColor clearColor];
         
-        self.detailView = [[UIView alloc] init];
-        self.detailView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.1];
-        self.detailView.layer.cornerRadius = 4;
-        self.detailView.layer.masksToBounds = YES;
-        [self addSubview:self.detailView];
+        NSMutableDictionary *answerLinkAttributes = [NSMutableDictionary dictionary];
+        [answerLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
+        [answerLinkAttributes setValue:(__bridge id)[[UIColor whiteColor] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
+        [answerLinkAttributes setValue:(__bridge id)[[UIColor clearColor] CGColor] forKey:(NSString *)kTTTBackgroundFillColorAttributeName];
+        self.answerLable.linkAttributes = answerLinkAttributes;
+        self.answerLable.activeLinkAttributes = answerLinkAttributes;
+        [self.cardView addSubview:self.answerLable];
         
-        self.detailLabel = [[XXLinkLabel alloc] init];
+        self.detailLabel = [[TTTAttributedLabel alloc] initWithFrame:self.bounds];
         self.detailLabel.numberOfLines = 0;
         self.detailLabel.font = [UIFont systemFontOfSize:14];
         self.detailLabel.textColor = [UIColor whiteColor];
-        self.detailLabel.linkTextColor = [UIColor colorWithRed:252/255.0 green:217/255.0 blue:28/255.0 alpha:1.0];
-        self.detailLabel.selectedBackgroudColor = [UIColor clearColor];
-        [self.detailView addSubview:self.detailLabel];
+        NSMutableDictionary *detailLinkAttributes = [NSMutableDictionary dictionary];
+        [detailLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
+        [detailLinkAttributes setValue:(__bridge id)[[UIColor colorWithRed:252/255.0 green:217/255.0 blue:28/255.0 alpha:1.0] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
+        [detailLinkAttributes setValue:(__bridge id)[[UIColor clearColor] CGColor] forKey:(NSString *)kTTTBackgroundFillColorAttributeName];
+        self.detailLabel.linkAttributes = detailLinkAttributes;
+        self.detailLabel.activeLinkAttributes = detailLinkAttributes;
+        [self.cardView addSubview:self.detailLabel];
     }
     return self;
 }
@@ -65,54 +76,54 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     NSString *url = [search_info objectForKey:@"url"];
     
     self.questionLable.text = title;
-    XXLinkLabelModel *answerModel = [[XXLinkLabelModel alloc] init];
-    answerModel.message = @"汪仔答案：";
-    XXLinkLabelModel *resultModel = [[XXLinkLabelModel alloc] init];
-    resultModel.message = @"http://nb.sa.sogou.com/";
-    [resultModel replaceUrlWithString:result.length ? result : recommend];
-    self.answerLable.messageModels = @[answerModel, resultModel];
+    NSString *answer = result.length ? result : recommend;
+    NSString *answetText = [NSString stringWithFormat:@"汪仔答案：%@",answer];
+    self.answerLable.text = answetText;
+    [self.answerLable addLinkToURL:[NSURL URLWithString:@"http://nb.sa.sogou.com/"] withRange:[answetText rangeOfString:answer]];
     
     if (summary.length && url.length) {
-        XXLinkLabelModel *summaryModel = [[XXLinkLabelModel alloc] init];
-        summaryModel.message = summary;
-        XXLinkLabelModel *urlModel = [[XXLinkLabelModel alloc] init];
-        urlModel.message = url;
-        [urlModel replaceUrlWithString:@"快速查看>"];
-        self.detailLabel.messageModels = @[summaryModel, urlModel];
+        NSString *summaryText = [NSString stringWithFormat:@"%@快速查看>",summary];
+        NSRange summaryRange = [summaryText rangeOfString:@"快速查看>" options:NSBackwardsSearch];
+        self.detailLabel.text = summaryText;
+        [self.detailLabel addLinkToURL:[NSURL URLWithString:url] withRange:summaryRange];
     } else {
-        self.detailLabel.messageModels = nil;
+        self.detailLabel.text = nil;
     }
     [self layoutIfNeeded];
 }
 
 - (void)relayoutSubviews
 {
-    self.questionLable.frame = self.bounds;
+    self.questionLable.frame = CGRectInset(self.bounds, 4, 6);
     [self.questionLable sizeToFit];
-    self.questionLable.frame = CGRectMake(0, 0, self.bounds.size.width, self.questionLable.bounds.size.height);
+    self.questionLable.frame = CGRectMake(4, 6, self.bounds.size.width - 8, self.questionLable.bounds.size.height);
     
-    self.answerLable.frame = CGRectMake(26, 0, CGRectGetWidth(self.bounds) - 26, 100);
+    self.answerLable.frame = CGRectMake(26, 0, CGRectGetWidth(self.bounds) - 26 - 8, 100);
     [self.answerLable sizeToFit];
-    self.answerLable.frame = CGRectMake(26, CGRectGetMaxY(self.questionLable.frame) + 8, CGRectGetWidth(self.bounds) - 26, self.answerLable.bounds.size.height);
+    self.answerLable.frame = CGRectMake(26, CGRectGetMaxY(self.questionLable.frame) + 10, CGRectGetWidth(self.bounds) - 26 - 8, self.answerLable.bounds.size.height);
     
-    if (self.detailLabel.attributedText.length == 0) {
-        self.detailView.hidden = YES;
-        self.detailView.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame), CGRectGetWidth(self.bounds) - 26, 0);
-        self.detailLabel.frame = CGRectMake(8, 0, CGRectGetWidth(self.detailView.frame) - 16, 0);
-    } else {
-        self.detailView.hidden = NO;
-        self.detailLabel.frame = CGRectMake(34, 0, CGRectGetWidth(self.bounds) - 34 - 8, 100);
+    NSArray *search_infos = [self.model objectForKey:@"search_infos"];
+    NSDictionary *search_info = [search_infos firstObject];
+    NSString *summary = [search_info objectForKey:@"summary"];
+    NSString *url = [search_info objectForKey:@"url"];
+    if (summary.length && url.length) {
+        self.detailLabel.hidden = NO;
+        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, 100);
         [self.detailLabel sizeToFit];
-        self.detailView.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame) + 5, CGRectGetWidth(self.bounds) - 26, CGRectGetHeight(self.detailLabel.frame) + 16);
-        self.detailLabel.frame = CGRectMake(8, 8, CGRectGetWidth(self.detailView.frame) - 16, self.detailLabel.bounds.size.height);
+        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, self.detailLabel.bounds.size.height);
+    } else {
+        self.detailLabel.hidden = YES;
+        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, 0);
+        
     }
+    self.cardView.frame = CGRectMake(0, 8, CGRectGetWidth(self.bounds), CGRectGetMaxY(self.detailLabel.frame) + 6);
 }
 
 - (CGFloat)cellHieght
 {
     [self relayoutSubviews];
     
-    CGFloat cellHeight = CGRectGetMaxY(self.detailView.frame) + 20;
+    CGFloat cellHeight = CGRectGetMaxY(self.cardView.frame) + 8;
     return cellHeight;
 }
 
@@ -122,6 +133,16 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     
     [self relayoutSubviews];
 }
+
+@end
+
+@interface TTFSogouResultView () <UITableViewDataSource, UITableViewDelegate,TTTAttributedLabelDelegate>
+
+@property (nonatomic, strong) TTFSogouTableViewCell *heightForCell;
+@property (nonatomic, strong) CADisplayLink *displayLink;
+
+@property (nonatomic, assign) NSInteger timeInterval;
+@property (nonatomic, assign) NSInteger currentTimeInterval;
 
 @end
 
@@ -145,7 +166,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
         [self addSubview:self.tableView];
         
         self.heightForCell = [[TTFSogouTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTTFSogouTableViewCellIdentifier];
-        self.heightForCell.frame = CGRectInset(self.bounds, 8, 12);
+        self.heightForCell.frame = CGRectInset(self.bounds, 8, 0);
         
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(requestDataFromServer:)];
         self.displayLink.frameInterval = 60;
@@ -194,7 +215,18 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
         if ([object isKindOfClass:[NSDictionary class]]) {
             NSArray *resultArray = [object objectForKey:@"result"];
             if ([resultArray isKindOfClass:[NSArray class]]) {
-                self.dataArray = resultArray;
+                NSMutableArray *dataArray = [NSMutableArray array];
+                for (NSString *objectString in resultArray) {
+                    NSData *objectData = [objectString dataUsingEncoding:NSUTF8StringEncoding];
+                    if (jsonData == nil) {
+                        continue;
+                    }
+                    NSDictionary *objectDict = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:nil];
+                    if (objectDict) {
+                        [dataArray addObject:objectDict];
+                    }
+                }
+                self.dataArray = dataArray;
             }
         }
         
@@ -204,27 +236,19 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 
 - (void)setDataArray:(NSArray *)dataArray
 {
-    NSString *lastModelString = [dataArray lastObject];
-    NSString *currentModelString = [_dataArray lastObject];
-    NSData *lastJsonData = [lastModelString dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *currentJsonData = [currentModelString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
-    if (lastJsonData && currentJsonData) {
-        NSDictionary *lastObject = [NSJSONSerialization JSONObjectWithData:lastJsonData options:0 error:&error];
-        NSDictionary *currentObject = [NSJSONSerialization JSONObjectWithData:currentJsonData options:0 error:&error];
-        if ([[lastObject objectForKey:@"title"] isEqualToString:[currentObject objectForKey:@"title"]]) {
-            return;
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _dataArray = [dataArray copy];
-            [self.tableView reloadData];
-        });
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _dataArray = [dataArray copy];
-            [self.tableView reloadData];
-        });
+    NSDictionary *lastObject = [dataArray lastObject];
+    NSDictionary *currentObject = [_dataArray lastObject];
+    if ([[lastObject objectForKey:@"title"] isEqualToString:[currentObject objectForKey:@"title"]]) {
+        return;
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _dataArray = [dataArray copy];
+        [self.tableView reloadData];
+        if (_dataArray.count) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_dataArray.count - 1 inSection:0];
+            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        }
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -236,16 +260,8 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 {
     TTFSogouTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTTFSogouTableViewCellIdentifier forIndexPath:indexPath];
     if (indexPath.row < self.dataArray.count) {
-        __weak typeof(self) weakSelf = self;
-        NSString *jsonString = [self.dataArray objectAtIndex:indexPath.row];
-        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        if (jsonData) {
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-            cell.model = dict;
-            cell.detailLabel.linkClickBlock = ^(XXLinkLabelModel *linkInfo, NSString *linkUrl) {
-                [weakSelf didClickLinkModel:linkInfo linkUrl:linkUrl];
-            };
-        }
+        cell.detailLabel.delegate = self;
+        cell.model = [self.dataArray objectAtIndex:indexPath.row];
     }
     return cell;
 }
@@ -253,28 +269,37 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < self.dataArray.count) {
-        self.heightForCell.frame = CGRectInset(self.bounds, 8, 10);
-        NSString *jsonString = [self.dataArray objectAtIndex:indexPath.row];
-        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        if (jsonData) {
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-            self.heightForCell.model = dict;
-        }
+        self.heightForCell.frame = CGRectInset(self.bounds, 8, 0);
+        self.heightForCell.model = [self.dataArray objectAtIndex:indexPath.row];
         return [self.heightForCell cellHieght];
     }
     return 0.0;
 }
 
-- (void)didClickLinkModel:(XXLinkLabelModel *)linkInfo linkUrl:(NSString *)linkUrl
+- (void)attributedLabel:(TTTAttributedLabel *)label
+   didSelectLinkWithURL:(NSURL *)url
 {
+    NSLog(@"didSelectLinkWithURL:%@",url.absoluteString);
     
+    TTFPoPWebView *webView = [[TTFPoPWebView alloc] initWithURL:url];
+    [webView show];
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label
+didLongPressLinkWithURL:(NSURL *)url
+                atPoint:(CGPoint)point
+{
+    NSLog(@"didLongPressLinkWithURL:%@",url.absoluteString);
+    
+    TTFPoPWebView *webView = [[TTFPoPWebView alloc] initWithURL:url];
+    [webView show];
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    self.tableView.frame = CGRectInset(self.bounds, 8, 12);
+    self.tableView.frame = CGRectInset(self.bounds, 8, 0);
 }
 
 - (void)dealloc

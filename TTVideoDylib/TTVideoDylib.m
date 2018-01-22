@@ -18,7 +18,7 @@ static __attribute__((constructor)) void entry(){
     NSLog(@"\n               🎉!!！congratulations!!！🎉\n👍----------------insert dylib success----------------👍");
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidFinishLaunchingNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-
+        
         CYListenServer(6666);
     }];
 }
@@ -125,10 +125,8 @@ static __attribute__((constructor)) void entry(){
  **/
 @interface TTFQuestionStruct
 
-- (void)setTimeLimit:(long)limit;
-
-- (long)timeLimit;
-
+@property (assign, nonatomic) long timeLimit;
+@property (copy, nonatomic) NSString *text;
 @end
 
 @interface TTFAnswerStruct
@@ -202,8 +200,7 @@ CHDeclareClass(TTFQuestionAnswerUnit)
 
  **/
 CHOptimizedMethod1(self, void, TTFQuestionAnswerUnit, setQuestion, TTFQuestionStruct *, question){
-    long limit = [question timeLimit] * 1.5;
-    [question setTimeLimit:limit];
+    question.timeLimit = question.timeLimit * 1.5;
     CHSuper1(TTFQuestionAnswerUnit, setQuestion, question);
     NSLog(@"setQuestion:%@",question);
 }
@@ -266,7 +263,6 @@ CHOptimizedMethod2(self, TTFTalkBoardContainerView *, TTFTalkBoardContainerView,
         slideTipLabel.hidden = YES;
         
         TTFSogouResultView *resultView = [[TTFSogouResultView alloc] initWithFrame:CGRectMake(0, 0, selfView.frame.size.width, selfView.frame.size.height)];
-        resultView.backgroundColor = [UIColor whiteColor];
         [selfView addSubview:resultView];
     }
     return self;

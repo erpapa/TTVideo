@@ -11,27 +11,23 @@
 extern NSInteger const kTTFSogouResultViewTag;
 extern NSString *const kTTFSogouTableViewCellIdentifier;
 
-@class XXLinkLabel;
+@class TTTAttributedLabel;
 @interface TTFSogouTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UIView *cardView;
 @property (nonatomic, strong) UILabel *questionLable;
-@property (nonatomic, strong) XXLinkLabel *answerLable;
-@property (nonatomic, strong) UIView *detailView;
-@property (nonatomic, strong) XXLinkLabel *detailLabel;
+@property (nonatomic, strong) TTTAttributedLabel *answerLable;
+@property (nonatomic, strong) TTTAttributedLabel *detailLabel;
 
 @property (nonatomic, strong) NSDictionary *model;
-- (CGFloat)cellHieght;
+
+- (CGFloat)cellHieght; // 计算高度
 
 @end
 
-@interface TTFSogouResultView : UIView <UITableViewDataSource, UITableViewDelegate>
+@interface TTFSogouResultView : UIView
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataArray;
 
-@property (nonatomic, strong) TTFSogouTableViewCell *heightForCell;
-@property (nonatomic, strong) CADisplayLink *displayLink;
-
-@property (nonatomic, assign) NSInteger timeInterval;
-@property (nonatomic, assign) NSInteger currentTimeInterval;
 @end
