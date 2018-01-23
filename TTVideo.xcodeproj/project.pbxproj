@@ -151,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				EA7CBFCA201460B8001172AE /* Cycript.framework */,
-				EA7CBFCC201460B8001172AE /* JavaScriptCore.framework */,
 				EA7CBFCE201460B8001172AE /* RevealServer.framework */,
+				EA7CBFCC201460B8001172AE /* JavaScriptCore.framework */,
 				EA7CBFD0201460B8001172AE /* Foundation.framework */,
 				EA7CBFD2201460B8001172AE /* UIKit.framework */,
 			);
@@ -556,6 +556,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -609,6 +610,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -626,6 +628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.erpapa.TTVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -643,6 +646,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.erpapa.TTVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
