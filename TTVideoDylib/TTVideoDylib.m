@@ -13,6 +13,7 @@
 #import <UIKit/UIKit.h>
 #import <Cycript/Cycript.h>
 #import "TTFSogouResultView.h"
+#import "TTFQuizHelperView.h"
 
 static __attribute__((constructor)) void entry(){
     NSLog(@"\n               🎉!!！congratulations!!！🎉\n👍----------------insert dylib success----------------👍");
@@ -226,7 +227,7 @@ CHOptimizedMethod1(self, void, TTFQuestionAnswerUnit, setQuestionTrace, id, trac
 
 CHOptimizedMethod1(self, void, TTFQuestionAnswerUnit, setStatus, NSInteger, status){
     CHSuper1(TTFQuestionAnswerUnit, setStatus, status);
-    NSLog(@"setStatus:%ld",status);
+    NSLog(@"setStatus:%ld",(long)status);
 }
 
 CHOptimizedMethod1(self, void, TTFQuestionAnswerUnit, setUserChoosen, id, model){
@@ -255,15 +256,20 @@ CHOptimizedMethod2(self, TTFTalkBoardContainerView *, TTFTalkBoardContainerView,
     
     self = (TTFTalkBoardContainerView *)CHSuper2(TTFTalkBoardContainerView, initWithFrame, frame, viewModel, model);
     if (self) {
-        UIView *selfView = (UIView *)self;
+        UIScrollView *selfView = (UIScrollView *)self;
         
         UIPageControl *pageDotView = [selfView valueForKey:@"_pageDotView"];
         pageDotView.hidden = YES;
         UILabel *slideTipLabel = [selfView valueForKey:@"_slideTipLabel"];
         slideTipLabel.hidden = YES;
         
-        TTFSogouResultView *resultView = [[TTFSogouResultView alloc] initWithFrame:CGRectMake(0, 0, selfView.frame.size.width, selfView.frame.size.height)];
+        TTFQuizHelperView *helperView = [[TTFQuizHelperView alloc] initWithFrame:CGRectMake(0, 0, selfView.frame.size.width, selfView.frame.size.height)];
+        [selfView addSubview:helperView];
+        
+        TTFSogouResultView *resultView = [[TTFSogouResultView alloc] initWithFrame:CGRectMake(selfView.frame.size.width * 2, 0, selfView.frame.size.width, selfView.frame.size.height)];
         [selfView addSubview:resultView];
+        
+        selfView.contentSize = CGSizeMake(selfView.frame.size.width * 3, selfView.frame.size.height);
     }
     return self;
 }
@@ -271,9 +277,21 @@ CHOptimizedMethod2(self, TTFTalkBoardContainerView *, TTFTalkBoardContainerView,
 CHOptimizedMethod0(self, void, TTFTalkBoardContainerView, layoutSubviews){
     CHSuper0(TTFTalkBoardContainerView, layoutSubviews);
     
-    UIView *selfView = (UIView *)self;
+    UIScrollView *selfView = (UIScrollView *)self;
+    Class containerClass = NSClassFromString(@"TTFTalkBoardContainerView");
+    if (![selfView isKindOfClass:containerClass]) {
+        return;
+    }
+
+    // 设置contentSize
+    selfView.layer.mask = nil;
+    selfView.contentSize = CGSizeMake(selfView.frame.size.width * 3, selfView.frame.size.height);
+    
+    TTFQuizHelperView *helperView = (TTFQuizHelperView *)[selfView viewWithTag:kTTFQuizHelperViewTag];
+    helperView.frame = CGRectMake(0, 0, selfView.frame.size.width, selfView.frame.size.height);
+
     TTFSogouResultView *resultView = (TTFSogouResultView *)[selfView viewWithTag:kTTFSogouResultViewTag];
-    resultView.frame = CGRectMake(0, 0, selfView.frame.size.width, selfView.frame.size.height);
+    resultView.frame = CGRectMake(selfView.frame.size.width * 2, 0, selfView.frame.size.width, selfView.frame.size.height);
 }
 
 CHConstructor{

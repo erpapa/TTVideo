@@ -28,25 +28,25 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
         self.cardView.layer.masksToBounds = YES;
         [self.contentView addSubview:self.cardView];
         
-        self.questionLable = [[UILabel alloc] init];
-        self.questionLable.numberOfLines = 0;
-        self.questionLable.font = [UIFont systemFontOfSize:16];
-        self.questionLable.textColor = [UIColor whiteColor];
-        [self.cardView addSubview:self.questionLable];
+        self.questionLabel = [[UILabel alloc] init];
+        self.questionLabel.numberOfLines = 0;
+        self.questionLabel.font = [UIFont systemFontOfSize:16];
+        self.questionLabel.textColor = [UIColor whiteColor];
+        [self.cardView addSubview:self.questionLabel];
         
-        self.answerLable = [[TTTAttributedLabel alloc] initWithFrame:self.bounds];
-        self.answerLable.numberOfLines = 0;
-        self.answerLable.font = [UIFont systemFontOfSize:20];
-        self.answerLable.textColor = [UIColor colorWithRed:252/255.0 green:217/255.0 blue:28/255.0 alpha:1.0];
-        self.answerLable.highlightedTextColor = [UIColor clearColor];
+        self.answerLabel = [[TTTAttributedLabel alloc] initWithFrame:self.bounds];
+        self.answerLabel.numberOfLines = 0;
+        self.answerLabel.font = [UIFont systemFontOfSize:20];
+        self.answerLabel.textColor = [UIColor colorWithRed:252/255.0 green:217/255.0 blue:28/255.0 alpha:1.0];
+        self.answerLabel.highlightedTextColor = [UIColor clearColor];
         
         NSMutableDictionary *answerLinkAttributes = [NSMutableDictionary dictionary];
         [answerLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
         [answerLinkAttributes setValue:(__bridge id)[[UIColor whiteColor] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
         [answerLinkAttributes setValue:(__bridge id)[[UIColor clearColor] CGColor] forKey:(NSString *)kTTTBackgroundFillColorAttributeName];
-        self.answerLable.linkAttributes = answerLinkAttributes;
-        self.answerLable.activeLinkAttributes = answerLinkAttributes;
-        [self.cardView addSubview:self.answerLable];
+        self.answerLabel.linkAttributes = answerLinkAttributes;
+        self.answerLabel.activeLinkAttributes = answerLinkAttributes;
+        [self.cardView addSubview:self.answerLabel];
         
         self.detailLabel = [[TTTAttributedLabel alloc] initWithFrame:self.bounds];
         self.detailLabel.numberOfLines = 0;
@@ -75,11 +75,11 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     NSString *summary = [search_info objectForKey:@"summary"];
     NSString *url = [search_info objectForKey:@"url"];
     
-    self.questionLable.text = title;
+    self.questionLabel.text = title;
     NSString *answer = result.length ? result : recommend;
     NSString *answetText = [NSString stringWithFormat:@"汪仔答案：%@",answer];
-    self.answerLable.text = answetText;
-    [self.answerLable addLinkToURL:[NSURL URLWithString:@"http://nb.sa.sogou.com/"] withRange:[answetText rangeOfString:answer]];
+    self.answerLabel.text = answetText;
+    [self.answerLabel addLinkToURL:[NSURL URLWithString:@"http://nb.sa.sogou.com/"] withRange:[answetText rangeOfString:answer]];
     
     if (summary.length && url.length) {
         NSString *summaryText = [NSString stringWithFormat:@"%@快速查看>",summary];
@@ -94,13 +94,13 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 
 - (void)relayoutSubviews
 {
-    self.questionLable.frame = CGRectInset(self.bounds, 4, 6);
-    [self.questionLable sizeToFit];
-    self.questionLable.frame = CGRectMake(4, 6, self.bounds.size.width - 8, self.questionLable.bounds.size.height);
+    self.questionLabel.frame = CGRectInset(self.bounds, 4, 6);
+    [self.questionLabel sizeToFit];
+    self.questionLabel.frame = CGRectMake(4, 6, self.bounds.size.width - 8, self.questionLabel.bounds.size.height);
     
-    self.answerLable.frame = CGRectMake(26, 0, CGRectGetWidth(self.bounds) - 26 - 8, 100);
-    [self.answerLable sizeToFit];
-    self.answerLable.frame = CGRectMake(26, CGRectGetMaxY(self.questionLable.frame) + 10, CGRectGetWidth(self.bounds) - 26 - 8, self.answerLable.bounds.size.height);
+    self.answerLabel.frame = CGRectMake(26, 0, CGRectGetWidth(self.bounds) - 26 - 8, 100);
+    [self.answerLabel sizeToFit];
+    self.answerLabel.frame = CGRectMake(26, CGRectGetMaxY(self.questionLabel.frame) + 10, CGRectGetWidth(self.bounds) - 26 - 8, self.answerLabel.bounds.size.height);
     
     NSArray *search_infos = [self.model objectForKey:@"search_infos"];
     NSDictionary *search_info = [search_infos firstObject];
@@ -108,22 +108,22 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     NSString *url = [search_info objectForKey:@"url"];
     if (summary.length && url.length) {
         self.detailLabel.hidden = NO;
-        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, 100);
+        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLabel.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, 100);
         [self.detailLabel sizeToFit];
-        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, self.detailLabel.bounds.size.height);
+        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLabel.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, self.detailLabel.bounds.size.height);
     } else {
         self.detailLabel.hidden = YES;
-        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLable.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, 0);
+        self.detailLabel.frame = CGRectMake(26, CGRectGetMaxY(self.answerLabel.frame) + 5, CGRectGetWidth(self.bounds) - 26 - 8, 0);
         
     }
-    self.cardView.frame = CGRectMake(0, 8, CGRectGetWidth(self.bounds), CGRectGetMaxY(self.detailLabel.frame) + 6);
+    self.cardView.frame = CGRectMake(0, 4, CGRectGetWidth(self.bounds), CGRectGetMaxY(self.detailLabel.frame) + 6);
 }
 
 - (CGFloat)cellHieght
 {
     [self relayoutSubviews];
     
-    CGFloat cellHeight = CGRectGetMaxY(self.cardView.frame) + 8;
+    CGFloat cellHeight = CGRectGetMaxY(self.cardView.frame) + 4;
     return cellHeight;
 }
 
@@ -137,6 +137,9 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 @end
 
 @interface TTFSogouResultView () <UITableViewDataSource, UITableViewDelegate,TTTAttributedLabelDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *dataArray;
 
 @property (nonatomic, strong) TTFSogouTableViewCell *heightForCell;
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -181,9 +184,9 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 - (void)requestDataFromServer:(id)sender
 {
     self.currentTimeInterval = [[NSDate date] timeIntervalSince1970] * 1000;
-    
+
     NSString *wdcallbackString = [NSString stringWithFormat:@"jQuery321007116257213056087_%ld",self.timeInterval];
-    NSString *urlString = [NSString stringWithFormat:@"http://140.143.49.31/api/ans2?key=xigua&wdcallback=%@&_=%ld",wdcallbackString,self.currentTimeInterval];
+    NSString *urlString = [NSString stringWithFormat:@"http://140.143.49.31/api/ans2?key=xigua&wdcallback=%@&_=%ld",wdcallbackString,(long)self.currentTimeInterval];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     // GET请求
@@ -195,7 +198,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     [request setValue:@"http://nb.sa.sogou.com/" forHTTPHeaderField:@"Referer"];
     [request setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
-    [request setValue:@"Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12B440 Sogousearch/Ios/5.9.8" forHTTPHeaderField:@"User-Agent"];
+    [request setValue:@"Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Mobile/14B100 Sogousearch/Ios/5.9.8" forHTTPHeaderField:@"User-Agent"];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
@@ -226,7 +229,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
                         [dataArray addObject:objectDict];
                     }
                 }
-                self.dataArray = dataArray;
+                [self refreshDataArray:dataArray];
             }
         }
         
@@ -234,17 +237,31 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     [task resume];
 }
 
-- (void)setDataArray:(NSArray *)dataArray
+- (void)refreshDataArray:(NSArray *)dataArray
 {
+    if (dataArray.count <= 0) {
+        return;
+    }
     NSDictionary *lastObject = [dataArray lastObject];
-    NSDictionary *currentObject = [_dataArray lastObject];
+    NSDictionary *currentObject = [self.dataArray lastObject];
     if ([[lastObject objectForKey:@"title"] isEqualToString:[currentObject objectForKey:@"title"]]) {
         return;
     }
+    
+    // 取得没有重复的项
+    NSMutableArray *exitArray = [NSMutableArray arrayWithArray:self.dataArray];
+    for (NSDictionary *dict in dataArray) {
+        for (NSDictionary *exitDict in self.dataArray) {
+            if ([[dict objectForKey:@"title"] isEqualToString:[exitDict objectForKey:@"title"]]) {
+                continue;
+            }
+        }
+        [exitArray addObject:dict];
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
-        _dataArray = [dataArray copy];
+        self.dataArray = [exitArray copy];
         [self.tableView reloadData];
-        if (_dataArray.count) {
+        if (self.dataArray.count) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_dataArray.count - 1 inSection:0];
             [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
         }
@@ -298,7 +315,6 @@ didLongPressLinkWithURL:(NSURL *)url
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
     self.tableView.frame = CGRectInset(self.bounds, 8, 0);
 }
 

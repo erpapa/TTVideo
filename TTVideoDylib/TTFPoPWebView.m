@@ -25,7 +25,7 @@
 
 - (instancetype)initWithURL:(NSURL *)url
 {
-    self = [super initWithFrame: CGRectMake(0, CGRectGetHeight([UIScreen mainScreen].bounds), CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds) * 0.4)];
+    self = [super initWithFrame: CGRectMake(0, CGRectGetHeight([UIScreen mainScreen].bounds), CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds) * 0.6)];
     if (self) {
         self.url = url;
         

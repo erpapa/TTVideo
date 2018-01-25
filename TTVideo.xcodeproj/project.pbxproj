@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA1D2F3B2018C3540079937C /* TTFQuizHelperView.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1D2F392018C3540079937C /* TTFQuizHelperView.h */; };
+		EA1D2F3C2018C3540079937C /* TTFQuizHelperView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1D2F3A2018C3540079937C /* TTFQuizHelperView.m */; };
 		EA5A51B7201616EB0089E987 /* TTTAttributedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5A51B5201616EA0089E987 /* TTTAttributedLabel.h */; };
 		EA5A51B8201616EB0089E987 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5A51B6201616EA0089E987 /* TTTAttributedLabel.m */; };
 		EA5A51BB2016214A0089E987 /* TTFPoPWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5A51B92016214A0089E987 /* TTFPoPWebView.h */; };
@@ -57,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA1D2F392018C3540079937C /* TTFQuizHelperView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTFQuizHelperView.h; sourceTree = "<group>"; };
+		EA1D2F3A2018C3540079937C /* TTFQuizHelperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTFQuizHelperView.m; sourceTree = "<group>"; };
 		EA5A51B5201616EA0089E987 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		EA5A51B6201616EA0089E987 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		EA5A51B92016214A0089E987 /* TTFPoPWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTFPoPWebView.h; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				EA5A51BA2016214A0089E987 /* TTFPoPWebView.m */,
 				EA5B906B201493DF000BF668 /* TTFSogouResultView.h */,
 				EA5B906C201493DF000BF668 /* TTFSogouResultView.m */,
+				EA1D2F392018C3540079937C /* TTFQuizHelperView.h */,
+				EA1D2F3A2018C3540079937C /* TTFQuizHelperView.m */,
 				EA7CBFD5201460B8001172AE /* MethodTrace */,
 				EA7CBFE0201460B8001172AE /* AntiAntiDebug */,
 				EA7CBFE3201460B8001172AE /* fishhook */,
@@ -223,6 +229,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1D2F3B2018C3540079937C /* TTFQuizHelperView.h in Headers */,
 				EA5A51BB2016214A0089E987 /* TTFPoPWebView.h in Headers */,
 				EA7CBFD7201460B8001172AE /* ANYMethodLog.h in Headers */,
 				EA7CBFDB201460B8001172AE /* MethodTrace.h in Headers */,
@@ -383,6 +390,7 @@
 				EA5B906E201493DF000BF668 /* TTFSogouResultView.m in Sources */,
 				EA5A51B8201616EB0089E987 /* TTTAttributedLabel.m in Sources */,
 				EA7CBFE5201460B8001172AE /* fishhook.c in Sources */,
+				EA1D2F3C2018C3540079937C /* TTFQuizHelperView.m in Sources */,
 				EA7CBFEA201460B8001172AE /* TTVideoDylib.mm in Sources */,
 				EA7CBFEE201460B8001172AE /* TTVideoDylib.m in Sources */,
 				EA7CBFD9201460B8001172AE /* ANYMethodLog.m in Sources */,

@@ -15,8 +15,8 @@ extern NSString *const kTTFSogouTableViewCellIdentifier;
 @interface TTFSogouTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIView *cardView;
-@property (nonatomic, strong) UILabel *questionLable;
-@property (nonatomic, strong) TTTAttributedLabel *answerLable;
+@property (nonatomic, strong) UILabel *questionLabel;
+@property (nonatomic, strong) TTTAttributedLabel *answerLabel;
 @property (nonatomic, strong) TTTAttributedLabel *detailLabel;
 
 @property (nonatomic, strong) NSDictionary *model;
@@ -26,8 +26,5 @@ extern NSString *const kTTFSogouTableViewCellIdentifier;
 @end
 
 @interface TTFSogouResultView : UIView
-
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *dataArray;
 
 @end
