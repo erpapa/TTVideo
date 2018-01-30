@@ -6,7 +6,7 @@
 	<dict>
 		<key>AdAppActive.framework/AdAppActive</key>
 		<data>
-		AFrzDFuEPXohRI4MkUlbK4wxYVg=
+		wADGHGrTt8A/WvbUCh5IZPgxz5I=
 		</data>
 		<key>AdAppActive.framework/Headers/AdAppActive.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		i8kEve+nNsFr1gGcPcoen/g/BHQ=
+		ZyJ7xEBzZKl58wA2cuxMn8RH28A=
 		</data>
 		<key>DS-Digital-Italic.ttf</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Follow.storyboardc/Follow.nib</key>
 		<data>
-		YiczENIm+y7yfiGrhalRGXLCuSg=
+		JKqH1GfxhvKfqXJhS/BwG0uySfs=
 		</data>
 		<key>Follow.storyboardc/Info.plist</key>
 		<data>
@@ -78,11 +78,11 @@
 		</data>
 		<key>Follow.storyboardc/Q7p-xJ-Jbo-view-b9N-SD-wCd.nib</key>
 		<data>
-		zpG5AI7lSBAmaU613a8TRuBd0s4=
+		EnT+bQ5TNvPZV7M89dmxp+yGj8M=
 		</data>
 		<key>Follow.storyboardc/UINavigationController-ETE-Uc-rxy.nib</key>
 		<data>
-		g42A7gLkP7TEhxJT/lGt4pPdnxo=
+		7HIXdgUVHK5dotvZon8Fsbie6i8=
 		</data>
 		<key>HTSLiveCocosResource.bundle/Info.plist</key>
 		<data>
@@ -1058,7 +1058,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LH0JQdWI7EcYUchRbHJ0wxakMDg=
+		vZIo05iEDIrMnaPNpC66FDLmEKo=
 		</data>
 		<key>Kepler.bundle/OrderDetail@3x.png</key>
 		<data>
@@ -1130,7 +1130,7 @@
 		</data>
 		<key>LaunchScreen.nib</key>
 		<data>
-		XDrx61kcnyNgerBC6m3kbBu9mbY=
+		9zWWAb+Go70kCGV9BbxfIVOiKpc=
 		</data>
 		<key>MJRefresh.bundle/arrow@2x.png</key>
 		<data>
@@ -1233,7 +1233,7 @@
 		</data>
 		<key>Model.momd/Model 25.omo</key>
 		<data>
-		Y7Uow9I0q7GM6g/faECPzK929X8=
+		FZpX4nWip6l2xU6yynB+7VVmA00=
 		</data>
 		<key>Model.momd/Model 3.mom</key>
 		<data>
@@ -1277,15 +1277,15 @@
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/Info.plist</key>
 		<data>
-		pme+/VeqRerIRTWq1Ja1+GZD0wI=
+		XQab/VvOCj9MAjxhloEX6Guyq/s=
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/VideoNotificationContentExtension</key>
 		<data>
-		H/K4H2notFzMdTu6vETb49cwXAQ=
+		XlX4jc0mmnjcBhosIy+ZDYZjzNA=
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		pxHegfFhsi34sMM3DOuRdjcrHSs=
+		reRk+8fdCHQUKQOn8X51pC7rsWo=
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/noti_play@2x.png</key>
 		<data>
@@ -1297,15 +1297,15 @@
 		</data>
 		<key>PlugIns/VideoNotificationServiceExtension.appex/Info.plist</key>
 		<data>
-		dX+JLoKzIYEwNfg1M17iwFVl3fs=
+		4v33xfEqA5rtBZf832xpUjiI3Cg=
 		</data>
 		<key>PlugIns/VideoNotificationServiceExtension.appex/VideoNotificationServiceExtension</key>
 		<data>
-		32/DwrDRpHQV3+c8tyby+3AFUO4=
+		l3LiU2SpIugnj05S0qqJcwYrnQU=
 		</data>
 		<key>PlugIns/VideoNotificationServiceExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		rmCcO/C47+E3r+utSMX5oyUd6QE=
+		ZmBJG/E2eaVk2KP4RVbN7FOAE38=
 		</data>
 		<key>PlugIns/VideoShareExtension.appex/Base.lproj/MainInterface.storyboardc/Info.plist</key>
 		<dict>
@@ -1320,7 +1320,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/Gluna3NQGHuSfWwm7cLLrnD7bk=
+			Hj8+Eeb8rthUXqDP+Lf31zok38w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1329,22 +1329,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GMl57MYvng58sjxNtbdlvgrTj0o=
+			Igu6XWQ33v4ahx6DwqoANuEV7dM=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>PlugIns/VideoShareExtension.appex/Info.plist</key>
 		<data>
-		OVGgxmH9NE6Y8oCTTKG4Ppr462w=
+		ZnczGLitaVj4GHsKDkHhZMVh/sc=
 		</data>
 		<key>PlugIns/VideoShareExtension.appex/VideoShareExtension</key>
 		<data>
-		NU3mNeK+rwj6M3f6xz3rnV2sGrU=
+		0zcGGxddDtUfgpDB7QgNQCTM0mQ=
 		</data>
 		<key>PlugIns/VideoShareExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		jdGyO6ff6l7Dps3/pqzMy900prk=
+		kcAwTWJD6SvM5yrke80JL8NOac4=
 		</data>
 		<key>PlugIns/VideoTodayExtension.appex/Base.lproj/MainInterface.storyboardc/Info.plist</key>
 		<dict>
@@ -1359,22 +1359,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YmGyoP7NDGpcMjkfaGq6huZCBrk=
+			HVNMnMNh+6ezvh9xq97oaV7EEkA=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>PlugIns/VideoTodayExtension.appex/Info.plist</key>
 		<data>
-		EJ/V2DJsRl4vZ9fgm4ypJFpi4kA=
+		6rUdiLxsQApWkyAYpEWWkS2A5Vg=
 		</data>
 		<key>PlugIns/VideoTodayExtension.appex/VideoTodayExtension</key>
 		<data>
-		PDoK+qZJfAzWB4929KQGc4brAYs=
+		gzsIi973UI+Zjyu/LVYArJF90mE=
 		</data>
 		<key>PlugIns/VideoTodayExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		wZnOarhx5skikhnVD5yFDF3ldKI=
+		qhq6J8MpCJZuNxb+ZMpnBrVvwuw=
 		</data>
 		<key>ProjectDayModeThemeUISetting.strings</key>
 		<data>
@@ -1398,7 +1398,7 @@
 		</data>
 		<key>RootTab.storyboardc/UITabBarController-Qvz-Bd-N8N.nib</key>
 		<data>
-		DG7b0sVGgYKrME18xT3EfneNKP8=
+		wwzN39N2G7OzHY4WcCSVL2AoepE=
 		</data>
 		<key>SSADResource.bundle/ad_banner_close_btn_bg.png</key>
 		<data>
@@ -1498,15 +1498,23 @@
 		</data>
 		<key>TTFantasy.bundle/Assets.car</key>
 		<data>
-		rZZk4JSresrJytowwRQjzsTPjv8=
+		diNjUyJNMl9JCjLSwTCUC/kDTSw=
 		</data>
 		<key>TTFantasy.bundle/Info.plist</key>
 		<data>
-		o9VgiqUztVUnpgABos7DBxq4o2Q=
+		9e8vw+/wC1UDSRCWw+VmMbE58Xw=
+		</data>
+		<key>TTFantasy.bundle/animation/coin.json</key>
+		<data>
+		DJAQOaJctTTU6fukbAzCbcpcvn0=
 		</data>
 		<key>TTFantasy.bundle/animation/enter_again.json</key>
 		<data>
 		0HEDXcDIFZFFCVEBGG/JgzQPbLg=
+		</data>
+		<key>TTFantasy.bundle/animation/envelope.json</key>
+		<data>
+		El+ZpszAbY/pR2nkqAFFn0ZhLMQ=
 		</data>
 		<key>TTFantasy.bundle/animation/firework.json</key>
 		<data>
@@ -1540,6 +1548,134 @@
 		<data>
 		m4OubGRRRjiJjBgdVpcs++2hJ0Q=
 		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_0.png</key>
+		<data>
+		BKoV5NRhikDH45t6e7oB5o5Eg+g=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_1.png</key>
+		<data>
+		Qr7xU72+mbyeRiXuR0wdU/00i9k=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_2.png</key>
+		<data>
+		qrxV93KZZE6Od0HV29OzRscYnT0=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_3.png</key>
+		<data>
+		Ztcsh8K/icqrdbLlyPJiv45HSa8=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_4.png</key>
+		<data>
+		YVKnuxGyNbbMKnAcycb8jd45ERE=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/team_join_bg.json</key>
+		<data>
+		u1pVecsJZiQhE+Jf8wCdNbTWnyM=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_ing/images/img_0.png</key>
+		<data>
+		+Jd2Hi0P8EnNpFDA+6dl++0dvIE=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_ing/team_join_ing.json</key>
+		<data>
+		EJ3Q6Sz5eASL2WTlgAkAz9Yb0uU=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_0.png</key>
+		<data>
+		eA8gLC8CRuCwlRV2vFfpEsulrf0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_1.png</key>
+		<data>
+		AVDpWoowGQiEOF35yFIfIi1Q+RQ=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_2.png</key>
+		<data>
+		uLB8AxPovjwzohrABCt0zvlFwos=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_3.png</key>
+		<data>
+		39LK/OhhK3I+nab9/MhKUsclkMg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_4.png</key>
+		<data>
+		EkC3gTHM20u6hHrbQloVJ/qWoqk=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_5.png</key>
+		<data>
+		t0iZGxId7+NG5HIzEl0RfCTu3q0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_6.png</key>
+		<data>
+		mLwSnZk4rGH7DrzAqO5cOnXV8tY=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/treasure_box.json</key>
+		<data>
+		zL3J0beFsjPsAZskTVab+6PpW5o=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_0.png</key>
+		<data>
+		39LK/OhhK3I+nab9/MhKUsclkMg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_1.png</key>
+		<data>
+		U+PNHDNAFp3RSuVoSoP/b5hia48=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_2.png</key>
+		<data>
+		GcM6f3Xww/RV+Hwqd4mPh6XAh2c=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_3.png</key>
+		<data>
+		Fo7xCOrNCsE8wtZY0tjYAjuVAhg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_4.png</key>
+		<data>
+		mLwSnZk4rGH7DrzAqO5cOnXV8tY=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_5.png</key>
+		<data>
+		t0iZGxId7+NG5HIzEl0RfCTu3q0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/treasure_box_open.json</key>
+		<data>
+		qDS6HY6GIbzQIq8NsAg1vy2gfMI=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_0.png</key>
+		<data>
+		U+PNHDNAFp3RSuVoSoP/b5hia48=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_1.png</key>
+		<data>
+		3GkrROuwvXBQIDTzmgJszZPP5bM=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_2.png</key>
+		<data>
+		Fo7xCOrNCsE8wtZY0tjYAjuVAhg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_3.png</key>
+		<data>
+		mLwSnZk4rGH7DrzAqO5cOnXV8tY=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_4.png</key>
+		<data>
+		t0iZGxId7+NG5HIzEl0RfCTu3q0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/treasure_box_shake.json</key>
+		<data>
+		fMGn9kBqJ5B2rhq8SUU73N+0vPU=
+		</data>
+		<key>TTFantasy.bundle/animation/tv_show_logo/images/img_0.png</key>
+		<data>
+		EvRwhu8u3XP6xjZniRNZ6BNXH6A=
+		</data>
+		<key>TTFantasy.bundle/animation/tv_show_logo/images/img_1.png</key>
+		<data>
+		9hqL0X64aqo3Ok4epPx8OcYH4Rw=
+		</data>
+		<key>TTFantasy.bundle/animation/tv_show_logo/tv_show_logo.json</key>
+		<data>
+		nQJLZtfnKrnN1ugNH5Q+eCElxec=
+		</data>
 		<key>TTFantasy.bundle/animation/use_life.json</key>
 		<data>
 		b2ZvRVicsFu+KsUZLoWAaK64VgM=
@@ -1547,6 +1683,10 @@
 		<key>TTFantasy.bundle/font/DIN_Alternate.ttf</key>
 		<data>
 		gE11wvF4jK+qgs5bULnG0F7u1EM=
+		</data>
+		<key>TTFantasy.bundle/font/envelope.json</key>
+		<data>
+		El+ZpszAbY/pR2nkqAFFn0ZhLMQ=
 		</data>
 		<key>TTFantasy.bundle/introduce_answer.json</key>
 		<data>
@@ -1906,15 +2046,15 @@
 		</data>
 		<key>TTUIWidgetResources.bundle/TTFullScreenLoadingView.nib</key>
 		<data>
-		KmbojmbNK/uB9LlIiNiyiRdGXSY=
+		/JBWXSZ7DaJCFaeWjsmIYtgLMI8=
 		</data>
 		<key>TTUIWidgetResources.bundle/TTLoadMoreView.nib</key>
 		<data>
-		QjYOoHx4u7Jltyi+DHZzvxoGoLk=
+		lZzaccEkgBKk6/RSQ7/iv6H/B2M=
 		</data>
 		<key>TTUIWidgetResources.bundle/TTRefreshView.nib</key>
 		<data>
-		KH1CN+zgk1uzun1OVecWvN7grjM=
+		u8eC0mWR9Zl9XyjJbOyvbGsrRXc=
 		</data>
 		<key>TTUIWidgetResources.bundle/ttuiwidget_all_newv@3x.png</key>
 		<data>
@@ -1924,9 +2064,29 @@
 		<data>
 		uWdWZvFyE2THv5a4YYp3yMa5W9A=
 		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon1/icon.json</key>
+		<data>
+		lJimIYqph//ROvk0fbeHcqxT+Iw=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon1/images/img_0.png</key>
+		<data>
+		5m1K3nWCBgVWAwg2r/v0Xy/TV0w=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon2/icon.json</key>
+		<data>
+		8NIWWVer/4LQC07dccP9G0jEQ0A=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon2/images/img_0.png</key>
+		<data>
+		brCyGtEnEETagBbDaJoXxdf/EJY=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon2/images/img_1.png</key>
+		<data>
+		TP2HeDobGvNmVoixcrxj4Gbwkvc=
+		</data>
 		<key>TTVideoService.bundle/Info.plist</key>
 		<data>
-		g8iQl0Dmo+kViA9zwuV8fKGhBxU=
+		KbRu9bRekzxAFg5Qru/ebhj8oRA=
 		</data>
 		<key>TTVideoService.bundle/category.plist</key>
 		<data>
@@ -1958,23 +2118,23 @@
 		</data>
 		<key>Video.storyboardc/589-gk-uDZ-view-PPp-Jx-gEz.nib</key>
 		<data>
-		yPC4Ac1/dakLIrb6QGgzLcjr+Tw=
+		cCQM2sqvksOde/f0dbJWNuXunRU=
 		</data>
 		<key>Video.storyboardc/Info.plist</key>
 		<data>
-		cCSKVNvsHuGjmOfnnXXIPeRZHW0=
+		Ke3iFVOjNlKxP3RwgGGI6nvJ69g=
 		</data>
 		<key>Video.storyboardc/UINavigationController-mnG-uY-uL1.nib</key>
 		<data>
-		i3GlMS31R9aUoc8S+rPOta3sTf0=
+		pZxNVVbXdhIH6arhWF9cuSsIknE=
 		</data>
 		<key>Video.storyboardc/Video.nib</key>
 		<data>
-		mdOuet+FXLlcWBgEr9Fn6N+ScZc=
+		Q6RHnpL2h3ZAkl8KWcC+dzGWwZ0=
 		</data>
 		<key>VideoInHouse-Info.plist</key>
 		<data>
-		AN5Dcw8ii/qJc0HvnvYQKQlA4u0=
+		CAHgUc8Y70h6ja2ZnAoND/8A3l8=
 		</data>
 		<key>ab.json</key>
 		<data>
@@ -2287,7 +2447,7 @@
 	<dict>
 		<key>AdAppActive.framework/AdAppActive</key>
 		<data>
-		AFrzDFuEPXohRI4MkUlbK4wxYVg=
+		wADGHGrTt8A/WvbUCh5IZPgxz5I=
 		</data>
 		<key>AdAppActive.framework/Headers/AdAppActive.h</key>
 		<data>
@@ -2343,7 +2503,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		i8kEve+nNsFr1gGcPcoen/g/BHQ=
+		ZyJ7xEBzZKl58wA2cuxMn8RH28A=
 		</data>
 		<key>DS-Digital-Italic.ttf</key>
 		<data>
@@ -2351,7 +2511,7 @@
 		</data>
 		<key>Follow.storyboardc/Follow.nib</key>
 		<data>
-		YiczENIm+y7yfiGrhalRGXLCuSg=
+		JKqH1GfxhvKfqXJhS/BwG0uySfs=
 		</data>
 		<key>Follow.storyboardc/Info.plist</key>
 		<data>
@@ -2359,11 +2519,11 @@
 		</data>
 		<key>Follow.storyboardc/Q7p-xJ-Jbo-view-b9N-SD-wCd.nib</key>
 		<data>
-		zpG5AI7lSBAmaU613a8TRuBd0s4=
+		EnT+bQ5TNvPZV7M89dmxp+yGj8M=
 		</data>
 		<key>Follow.storyboardc/UINavigationController-ETE-Uc-rxy.nib</key>
 		<data>
-		g42A7gLkP7TEhxJT/lGt4pPdnxo=
+		7HIXdgUVHK5dotvZon8Fsbie6i8=
 		</data>
 		<key>HTSLiveCocosResource.bundle/Info.plist</key>
 		<data>
@@ -3407,7 +3567,7 @@
 		</data>
 		<key>LaunchScreen.nib</key>
 		<data>
-		XDrx61kcnyNgerBC6m3kbBu9mbY=
+		9zWWAb+Go70kCGV9BbxfIVOiKpc=
 		</data>
 		<key>MJRefresh.bundle/arrow@2x.png</key>
 		<data>
@@ -3510,7 +3670,7 @@
 		</data>
 		<key>Model.momd/Model 25.omo</key>
 		<data>
-		Y7Uow9I0q7GM6g/faECPzK929X8=
+		FZpX4nWip6l2xU6yynB+7VVmA00=
 		</data>
 		<key>Model.momd/Model 3.mom</key>
 		<data>
@@ -3550,15 +3710,15 @@
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/Info.plist</key>
 		<data>
-		pme+/VeqRerIRTWq1Ja1+GZD0wI=
+		XQab/VvOCj9MAjxhloEX6Guyq/s=
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/VideoNotificationContentExtension</key>
 		<data>
-		H/K4H2notFzMdTu6vETb49cwXAQ=
+		XlX4jc0mmnjcBhosIy+ZDYZjzNA=
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		pxHegfFhsi34sMM3DOuRdjcrHSs=
+		reRk+8fdCHQUKQOn8X51pC7rsWo=
 		</data>
 		<key>PlugIns/VideoNotificationContentExtension.appex/noti_play@2x.png</key>
 		<data>
@@ -3570,15 +3730,15 @@
 		</data>
 		<key>PlugIns/VideoNotificationServiceExtension.appex/Info.plist</key>
 		<data>
-		dX+JLoKzIYEwNfg1M17iwFVl3fs=
+		4v33xfEqA5rtBZf832xpUjiI3Cg=
 		</data>
 		<key>PlugIns/VideoNotificationServiceExtension.appex/VideoNotificationServiceExtension</key>
 		<data>
-		32/DwrDRpHQV3+c8tyby+3AFUO4=
+		l3LiU2SpIugnj05S0qqJcwYrnQU=
 		</data>
 		<key>PlugIns/VideoNotificationServiceExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		rmCcO/C47+E3r+utSMX5oyUd6QE=
+		ZmBJG/E2eaVk2KP4RVbN7FOAE38=
 		</data>
 		<key>PlugIns/VideoShareExtension.appex/Base.lproj/MainInterface.storyboardc/Info.plist</key>
 		<dict>
@@ -3593,7 +3753,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/Gluna3NQGHuSfWwm7cLLrnD7bk=
+			Hj8+Eeb8rthUXqDP+Lf31zok38w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -3602,22 +3762,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GMl57MYvng58sjxNtbdlvgrTj0o=
+			Igu6XWQ33v4ahx6DwqoANuEV7dM=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>PlugIns/VideoShareExtension.appex/Info.plist</key>
 		<data>
-		OVGgxmH9NE6Y8oCTTKG4Ppr462w=
+		ZnczGLitaVj4GHsKDkHhZMVh/sc=
 		</data>
 		<key>PlugIns/VideoShareExtension.appex/VideoShareExtension</key>
 		<data>
-		NU3mNeK+rwj6M3f6xz3rnV2sGrU=
+		0zcGGxddDtUfgpDB7QgNQCTM0mQ=
 		</data>
 		<key>PlugIns/VideoShareExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		jdGyO6ff6l7Dps3/pqzMy900prk=
+		kcAwTWJD6SvM5yrke80JL8NOac4=
 		</data>
 		<key>PlugIns/VideoTodayExtension.appex/Base.lproj/MainInterface.storyboardc/Info.plist</key>
 		<dict>
@@ -3632,22 +3792,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YmGyoP7NDGpcMjkfaGq6huZCBrk=
+			HVNMnMNh+6ezvh9xq97oaV7EEkA=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>PlugIns/VideoTodayExtension.appex/Info.plist</key>
 		<data>
-		EJ/V2DJsRl4vZ9fgm4ypJFpi4kA=
+		6rUdiLxsQApWkyAYpEWWkS2A5Vg=
 		</data>
 		<key>PlugIns/VideoTodayExtension.appex/VideoTodayExtension</key>
 		<data>
-		PDoK+qZJfAzWB4929KQGc4brAYs=
+		gzsIi973UI+Zjyu/LVYArJF90mE=
 		</data>
 		<key>PlugIns/VideoTodayExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		wZnOarhx5skikhnVD5yFDF3ldKI=
+		qhq6J8MpCJZuNxb+ZMpnBrVvwuw=
 		</data>
 		<key>ProjectDayModeThemeUISetting.strings</key>
 		<data>
@@ -3671,7 +3831,7 @@
 		</data>
 		<key>RootTab.storyboardc/UITabBarController-Qvz-Bd-N8N.nib</key>
 		<data>
-		DG7b0sVGgYKrME18xT3EfneNKP8=
+		wwzN39N2G7OzHY4WcCSVL2AoepE=
 		</data>
 		<key>SSADResource.bundle/ad_banner_close_btn_bg.png</key>
 		<data>
@@ -3771,15 +3931,23 @@
 		</data>
 		<key>TTFantasy.bundle/Assets.car</key>
 		<data>
-		rZZk4JSresrJytowwRQjzsTPjv8=
+		diNjUyJNMl9JCjLSwTCUC/kDTSw=
 		</data>
 		<key>TTFantasy.bundle/Info.plist</key>
 		<data>
-		o9VgiqUztVUnpgABos7DBxq4o2Q=
+		9e8vw+/wC1UDSRCWw+VmMbE58Xw=
+		</data>
+		<key>TTFantasy.bundle/animation/coin.json</key>
+		<data>
+		DJAQOaJctTTU6fukbAzCbcpcvn0=
 		</data>
 		<key>TTFantasy.bundle/animation/enter_again.json</key>
 		<data>
 		0HEDXcDIFZFFCVEBGG/JgzQPbLg=
+		</data>
+		<key>TTFantasy.bundle/animation/envelope.json</key>
+		<data>
+		El+ZpszAbY/pR2nkqAFFn0ZhLMQ=
 		</data>
 		<key>TTFantasy.bundle/animation/firework.json</key>
 		<data>
@@ -3813,6 +3981,134 @@
 		<data>
 		m4OubGRRRjiJjBgdVpcs++2hJ0Q=
 		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_0.png</key>
+		<data>
+		BKoV5NRhikDH45t6e7oB5o5Eg+g=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_1.png</key>
+		<data>
+		Qr7xU72+mbyeRiXuR0wdU/00i9k=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_2.png</key>
+		<data>
+		qrxV93KZZE6Od0HV29OzRscYnT0=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_3.png</key>
+		<data>
+		Ztcsh8K/icqrdbLlyPJiv45HSa8=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/images/img_4.png</key>
+		<data>
+		YVKnuxGyNbbMKnAcycb8jd45ERE=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_bg/team_join_bg.json</key>
+		<data>
+		u1pVecsJZiQhE+Jf8wCdNbTWnyM=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_ing/images/img_0.png</key>
+		<data>
+		+Jd2Hi0P8EnNpFDA+6dl++0dvIE=
+		</data>
+		<key>TTFantasy.bundle/animation/team_join_ing/team_join_ing.json</key>
+		<data>
+		EJ3Q6Sz5eASL2WTlgAkAz9Yb0uU=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_0.png</key>
+		<data>
+		eA8gLC8CRuCwlRV2vFfpEsulrf0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_1.png</key>
+		<data>
+		AVDpWoowGQiEOF35yFIfIi1Q+RQ=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_2.png</key>
+		<data>
+		uLB8AxPovjwzohrABCt0zvlFwos=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_3.png</key>
+		<data>
+		39LK/OhhK3I+nab9/MhKUsclkMg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_4.png</key>
+		<data>
+		EkC3gTHM20u6hHrbQloVJ/qWoqk=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_5.png</key>
+		<data>
+		t0iZGxId7+NG5HIzEl0RfCTu3q0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/images/img_6.png</key>
+		<data>
+		mLwSnZk4rGH7DrzAqO5cOnXV8tY=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box/treasure_box.json</key>
+		<data>
+		zL3J0beFsjPsAZskTVab+6PpW5o=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_0.png</key>
+		<data>
+		39LK/OhhK3I+nab9/MhKUsclkMg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_1.png</key>
+		<data>
+		U+PNHDNAFp3RSuVoSoP/b5hia48=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_2.png</key>
+		<data>
+		GcM6f3Xww/RV+Hwqd4mPh6XAh2c=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_3.png</key>
+		<data>
+		Fo7xCOrNCsE8wtZY0tjYAjuVAhg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_4.png</key>
+		<data>
+		mLwSnZk4rGH7DrzAqO5cOnXV8tY=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/images/img_5.png</key>
+		<data>
+		t0iZGxId7+NG5HIzEl0RfCTu3q0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_open/treasure_box_open.json</key>
+		<data>
+		qDS6HY6GIbzQIq8NsAg1vy2gfMI=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_0.png</key>
+		<data>
+		U+PNHDNAFp3RSuVoSoP/b5hia48=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_1.png</key>
+		<data>
+		3GkrROuwvXBQIDTzmgJszZPP5bM=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_2.png</key>
+		<data>
+		Fo7xCOrNCsE8wtZY0tjYAjuVAhg=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_3.png</key>
+		<data>
+		mLwSnZk4rGH7DrzAqO5cOnXV8tY=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/images/img_4.png</key>
+		<data>
+		t0iZGxId7+NG5HIzEl0RfCTu3q0=
+		</data>
+		<key>TTFantasy.bundle/animation/treasure_box_shake/treasure_box_shake.json</key>
+		<data>
+		fMGn9kBqJ5B2rhq8SUU73N+0vPU=
+		</data>
+		<key>TTFantasy.bundle/animation/tv_show_logo/images/img_0.png</key>
+		<data>
+		EvRwhu8u3XP6xjZniRNZ6BNXH6A=
+		</data>
+		<key>TTFantasy.bundle/animation/tv_show_logo/images/img_1.png</key>
+		<data>
+		9hqL0X64aqo3Ok4epPx8OcYH4Rw=
+		</data>
+		<key>TTFantasy.bundle/animation/tv_show_logo/tv_show_logo.json</key>
+		<data>
+		nQJLZtfnKrnN1ugNH5Q+eCElxec=
+		</data>
 		<key>TTFantasy.bundle/animation/use_life.json</key>
 		<data>
 		b2ZvRVicsFu+KsUZLoWAaK64VgM=
@@ -3820,6 +4116,10 @@
 		<key>TTFantasy.bundle/font/DIN_Alternate.ttf</key>
 		<data>
 		gE11wvF4jK+qgs5bULnG0F7u1EM=
+		</data>
+		<key>TTFantasy.bundle/font/envelope.json</key>
+		<data>
+		El+ZpszAbY/pR2nkqAFFn0ZhLMQ=
 		</data>
 		<key>TTFantasy.bundle/introduce_answer.json</key>
 		<data>
@@ -4179,15 +4479,15 @@
 		</data>
 		<key>TTUIWidgetResources.bundle/TTFullScreenLoadingView.nib</key>
 		<data>
-		KmbojmbNK/uB9LlIiNiyiRdGXSY=
+		/JBWXSZ7DaJCFaeWjsmIYtgLMI8=
 		</data>
 		<key>TTUIWidgetResources.bundle/TTLoadMoreView.nib</key>
 		<data>
-		QjYOoHx4u7Jltyi+DHZzvxoGoLk=
+		lZzaccEkgBKk6/RSQ7/iv6H/B2M=
 		</data>
 		<key>TTUIWidgetResources.bundle/TTRefreshView.nib</key>
 		<data>
-		KH1CN+zgk1uzun1OVecWvN7grjM=
+		u8eC0mWR9Zl9XyjJbOyvbGsrRXc=
 		</data>
 		<key>TTUIWidgetResources.bundle/ttuiwidget_all_newv@3x.png</key>
 		<data>
@@ -4197,9 +4497,29 @@
 		<data>
 		uWdWZvFyE2THv5a4YYp3yMa5W9A=
 		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon1/icon.json</key>
+		<data>
+		lJimIYqph//ROvk0fbeHcqxT+Iw=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon1/images/img_0.png</key>
+		<data>
+		5m1K3nWCBgVWAwg2r/v0Xy/TV0w=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon2/icon.json</key>
+		<data>
+		8NIWWVer/4LQC07dccP9G0jEQ0A=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon2/images/img_0.png</key>
+		<data>
+		brCyGtEnEETagBbDaJoXxdf/EJY=
+		</data>
+		<key>TTVideoFantasyResource.bundle/fantasy_lottie_icon2/images/img_1.png</key>
+		<data>
+		TP2HeDobGvNmVoixcrxj4Gbwkvc=
+		</data>
 		<key>TTVideoService.bundle/Info.plist</key>
 		<data>
-		g8iQl0Dmo+kViA9zwuV8fKGhBxU=
+		KbRu9bRekzxAFg5Qru/ebhj8oRA=
 		</data>
 		<key>TTVideoService.bundle/category.plist</key>
 		<data>
@@ -4231,23 +4551,23 @@
 		</data>
 		<key>Video.storyboardc/589-gk-uDZ-view-PPp-Jx-gEz.nib</key>
 		<data>
-		yPC4Ac1/dakLIrb6QGgzLcjr+Tw=
+		cCQM2sqvksOde/f0dbJWNuXunRU=
 		</data>
 		<key>Video.storyboardc/Info.plist</key>
 		<data>
-		cCSKVNvsHuGjmOfnnXXIPeRZHW0=
+		Ke3iFVOjNlKxP3RwgGGI6nvJ69g=
 		</data>
 		<key>Video.storyboardc/UINavigationController-mnG-uY-uL1.nib</key>
 		<data>
-		i3GlMS31R9aUoc8S+rPOta3sTf0=
+		pZxNVVbXdhIH6arhWF9cuSsIknE=
 		</data>
 		<key>Video.storyboardc/Video.nib</key>
 		<data>
-		mdOuet+FXLlcWBgEr9Fn6N+ScZc=
+		Q6RHnpL2h3ZAkl8KWcC+dzGWwZ0=
 		</data>
 		<key>VideoInHouse-Info.plist</key>
 		<data>
-		AN5Dcw8ii/qJc0HvnvYQKQlA4u0=
+		CAHgUc8Y70h6ja2ZnAoND/8A3l8=
 		</data>
 		<key>ab.json</key>
 		<data>
