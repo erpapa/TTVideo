@@ -251,12 +251,16 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     // 取得没有重复的项
     NSMutableArray *exitArray = [NSMutableArray arrayWithArray:self.dataArray];
     for (NSDictionary *dict in dataArray) {
+        BOOL found = NO;
         for (NSDictionary *exitDict in self.dataArray) {
             if ([[dict objectForKey:@"title"] isEqualToString:[exitDict objectForKey:@"title"]]) {
-                continue;
+                found = YES;
+                break;
             }
         }
-        [exitArray addObject:dict];
+        if (found == NO) {
+            [exitArray addObject:dict];
+        }
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         self.dataArray = [exitArray copy];

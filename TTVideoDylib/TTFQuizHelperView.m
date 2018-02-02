@@ -76,6 +76,8 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
 @property (nonatomic, strong) TTFQuizHelperOptionView *optionView1;
 @property (nonatomic, strong) TTFQuizHelperOptionView *optionView2;
 @property (nonatomic, strong) TTFQuizHelperOptionView *optionView3;
+@property (nonatomic, strong) UIView *personalizeView;
+@property (nonatomic, strong) UILabel *personalizeLabel;
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, assign) NSInteger currentTimeInterval;
@@ -101,18 +103,31 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
         self.questionLabel.textColor = [UIColor whiteColor];
         [self.scrollView addSubview:self.questionLabel];
         
-        self.optionView0 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(0, 25, CGRectGetWidth(self.frame), 36)];
+        self.optionView0 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(8, 25, CGRectGetWidth(self.frame) - 16, 36)];
         [self.scrollView addSubview:self.optionView0];
         
-        self.optionView1 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(0, 25 + 36 + 10, CGRectGetWidth(self.frame), 36)];
+        self.optionView1 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(8, CGRectGetMaxY(self.optionView0.frame) + 10, CGRectGetWidth(self.frame) - 16, 36)];
         [self.scrollView addSubview:self.optionView1];
         
-        self.optionView2 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(0, 25 + 36 + 10 + 36 + 10, CGRectGetWidth(self.frame), 36)];
+        self.optionView2 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(8, CGRectGetMaxY(self.optionView1.frame) + 10, CGRectGetWidth(self.frame) - 16, 36)];
         [self.scrollView addSubview:self.optionView2];
         
-        self.optionView3 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(0, 25 + 36 + 10 + 36 + 10 + 36 + 10, CGRectGetWidth(self.frame), 36)];
+        self.optionView3 = [[TTFQuizHelperOptionView alloc] initWithFrame:CGRectMake(8, CGRectGetMaxY(self.optionView2.frame) + 10, CGRectGetWidth(self.frame) - 16, 36)];
         self.optionView3.hidden = YES;
         [self.scrollView addSubview:self.optionView3];
+        
+        self.personalizeView = [[UIView alloc] initWithFrame:CGRectMake(8, 25, CGRectGetWidth(self.frame) - 16, 46 * 3 - 10)];
+        self.personalizeView.backgroundColor = [UIColor colorWithRed:124.0/255.0 green:14.0/255.0 blue:244.0/255.0 alpha:0.5];
+        self.personalizeView.layer.cornerRadius = 10;
+        self.personalizeView.layer.masksToBounds = YES;
+        self.personalizeView.hidden = YES;
+        [self.scrollView addSubview:self.personalizeView];
+
+        self.personalizeLabel = [[UILabel alloc] initWithFrame:self.personalizeView.bounds];
+        self.personalizeLabel.numberOfLines = 0;
+        self.personalizeLabel.font = [UIFont systemFontOfSize:16];
+        self.personalizeLabel.textColor = [UIColor whiteColor];
+        [self.personalizeView addSubview:self.personalizeLabel];
         
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(requestDataFromServer:)];
         self.displayLink.frameInterval = 60;
@@ -174,6 +189,29 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
     [self.questionLabel sizeToFit];
     self.questionLabel.frame = CGRectMake(8, 8, CGRectGetWidth(self.frame) - 16, self.questionLabel.frame.size.height);
     
+    if (options.count >= 3) {
+        NSDictionary *option0 = [options objectAtIndex:0];
+        NSDictionary *option1 = [options objectAtIndex:1];
+        NSDictionary *option2 = [options objectAtIndex:1];
+        NSString *title0 = [option0 objectForKey:@"title"];
+        NSString *title1 = [option1 objectForKey:@"title"];
+        NSString *title2 = [option2 objectForKey:@"title"];
+        if ([title1 hasPrefix:@"NONE"] && [title2 hasPrefix:@"NONE"]) {
+            self.optionView0.hidden = YES;
+            self.optionView1.hidden = YES;
+            self.optionView2.hidden = YES;
+            self.optionView3.hidden = YES;
+            self.personalizeView.hidden = NO;
+            self.personalizeView.frame = CGRectMake(8, CGRectGetMaxY(self.questionLabel.frame) + 12, CGRectGetWidth(self.frame) - 16, 46 * 3 - 10);
+            self.personalizeLabel.frame = self.personalizeView.bounds;
+            self.personalizeLabel.text = title0;
+            [self.personalizeLabel sizeToFit];
+            self.personalizeLabel.frame = CGRectMake(0, 0, CGRectGetWidth(self.personalizeView.bounds), self.personalizeLabel.bounds.size.height);
+            self.scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(self.personalizeView.frame) + 18);
+            return;
+        }
+    }
+    self.personalizeView.hidden = YES;
     // 颜色渐变
     NSArray *defaultColors = @[(__bridge id)[UIColor colorWithRed:124.0/255.0 green:14.0/255.0 blue:244.0/255.0 alpha:0.5].CGColor,(__bridge id)[UIColor colorWithRed:124.0/255.0 green:14.0/255.0 blue:244.0/255.0 alpha:0.75].CGColor];
     NSArray *correctColors = @[(__bridge id)[UIColor colorWithRed:251.0/255.0 green:0.0 blue:112.0/255.0 alpha:0.5].CGColor,(__bridge id)[UIColor colorWithRed:251.0/255.0 green:0.0 blue:112.0/255.0 alpha:0.75].CGColor];
@@ -271,6 +309,8 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
         self.optionView3.frame = CGRectMake(8, CGRectGetMaxY(self.optionView2.frame) + 8, CGRectGetWidth(self.frame) - 20, 36);
         self.scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(self.optionView3.frame) + 18);
     }
+    
+    
 }
 
 - (void)layoutSubviews

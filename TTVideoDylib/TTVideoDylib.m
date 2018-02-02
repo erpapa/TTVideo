@@ -112,7 +112,7 @@ static __attribute__((constructor)) void entry(){
 
 
 /**
- *  直播控制器
+ * 直播控制器
  **/
 @interface TTFQuizShowLiveRoomViewController
 
@@ -122,7 +122,7 @@ static __attribute__((constructor)) void entry(){
 @end
 
 /**
- *  问题
+ * 问题
  **/
 @interface TTFQuestionStruct
 
@@ -154,14 +154,28 @@ static __attribute__((constructor)) void entry(){
 
 @end
 
-//// 问题view
-//@interface TTFQuestionAnswerView
-//
-//
-//@end
+/**
+ * 问题view
+ **/
+@interface TTFQuestionAnswerView
+
+@property(strong, nonatomic) UIView *specialQuestionHintContainerView;
+
+@property(retain, nonatomic) CAGradientLayer *questionLabelGradientLayer;
+@property(strong, nonatomic) UIView *questionLabelMaskView;
+@property(strong, nonatomic) UILabel *questionLabel;
+
+@property(retain, nonatomic) CAShapeLayer *countdownShapeLayer;
+@property(strong, nonatomic) UIView *qaContainerBackgroundView;
+@property(strong, nonatomic) UIImageView *qaContainerHeaderView;
+@property(strong, nonatomic) UIView *qaContainerView;
+
+- (instancetype)initWithFrame:(CGRect)frame;
+
+@end
 
 /**
- *  底部view
+ * 底部view
  **/
 @interface TTFTalkBoardContainerView
 
@@ -250,6 +264,16 @@ CHOptimizedMethod1(self, void, TTFQuestionAnswerUnit, submitAnswerWithOptions, i
     NSLog(@"submitAnswerWithOptions:%@",options);
 }
 
+CHDeclareClass(TTFQuestionAnswerView)
+
+CHOptimizedMethod1(self, TTFQuestionAnswerView *, TTFQuestionAnswerView, initWithFrame, CGRect, frame){
+    self = (TTFQuestionAnswerView *)CHSuper1(TTFQuestionAnswerView, initWithFrame, frame);
+    if (self) {
+        self.specialQuestionHintContainerView.hidden = YES;
+    }
+    return self;
+}
+
 CHDeclareClass(TTFTalkBoardContainerView)
 
 CHOptimizedMethod2(self, TTFTalkBoardContainerView *, TTFTalkBoardContainerView, initWithFrame, CGRect, frame, viewModel, id, model){
@@ -299,6 +323,7 @@ CHConstructor{
     CHLoadLateClass(TTFQuestionStruct);
     CHLoadLateClass(TTFAnswerStruct);
     CHLoadLateClass(TTFQuestionAnswerUnit);
+    CHLoadLateClass(TTFQuestionAnswerView);
     CHLoadLateClass(TTFTalkBoardContainerView);
     
     CHHook1(TTFQuizShowLiveRoomViewController, fetchedLivingStreamInfo);
@@ -311,6 +336,8 @@ CHConstructor{
     CHHook1(TTFQuestionAnswerUnit, setUserNeedAnswer);
     CHHook1(TTFQuestionAnswerUnit, setViewMoel);
     CHHook1(TTFQuestionAnswerUnit, submitAnswerWithOptions);
+    
+    CHHook1(TTFQuestionAnswerView, initWithFrame);
     
     CHHook2(TTFTalkBoardContainerView, initWithFrame, viewModel);
     CHHook0(TTFTalkBoardContainerView, layoutSubviews);
