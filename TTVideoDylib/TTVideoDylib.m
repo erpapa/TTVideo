@@ -116,9 +116,14 @@ static __attribute__((constructor)) void entry(){
  **/
 @interface TTFQuizShowLiveRoomViewController
 
+@property (strong, nonatomic) UIView *questionAnswerView;
+@property (strong, nonatomic) UIViewController *talkboardViewController;
+
 // 接收消息
 - (void)fetchedLivingStreamInfo:(id)info;
-
+// 显示
+- (void)showAnswerWithQuestionAnswerUnit:(id)arg1;
+- (void)showQuestionWithQuestionAnswerUnit:(id)arg1;
 @end
 
 /**
@@ -157,24 +162,23 @@ static __attribute__((constructor)) void entry(){
 /**
  * 问题view
  **/
-@interface TTFQuestionAnswerView
-
-@property(strong, nonatomic) UIView *specialQuestionHintContainerView;
-
-@property(retain, nonatomic) CAGradientLayer *questionLabelGradientLayer;
-@property(strong, nonatomic) UIView *questionLabelMaskView;
-@property(strong, nonatomic) UILabel *questionLabel;
-
-@property(retain, nonatomic) CAShapeLayer *countdownShapeLayer;
-@property(strong, nonatomic) UIView *qaContainerBackgroundView;
-@property(strong, nonatomic) UIImageView *qaContainerHeaderView;
-@property(strong, nonatomic) UIView *qaContainerView;
-
-- (instancetype)initWithFrame:(CGRect)frame;
-- (void)showAnswerWithQuestionAnswerUnit:(id)arg1;
-- (void)showQuestionWithQuestionAnswerUnit:(id)arg1;
-
-@end
+//@interface TTFQuestionAnswerView
+//
+//@property(strong, nonatomic) UIView *specialQuestionHintContainerView;
+//
+//@property(retain, nonatomic) CAGradientLayer *questionLabelGradientLayer;
+//@property(strong, nonatomic) UIView *questionLabelMaskView;
+//@property(strong, nonatomic) UILabel *questionLabel;
+//
+//@property(retain, nonatomic) CAShapeLayer *countdownShapeLayer;
+//@property(strong, nonatomic) UIView *qaContainerBackgroundView;
+//@property(strong, nonatomic) UIImageView *qaContainerHeaderView;
+//@property(strong, nonatomic) UIView *qaContainerView;
+//
+//- (void)showAnswerWithQuestionAnswerUnit:(id)arg1;
+//- (void)showQuestionWithQuestionAnswerUnit:(id)arg1;
+//
+//@end
 
 /**
  * 底部view
@@ -192,6 +196,20 @@ CHDeclareClass(TTFQuizShowLiveRoomViewController)
 CHOptimizedMethod1(self, void, TTFQuizShowLiveRoomViewController, fetchedLivingStreamInfo, id, info){
     CHSuper1(TTFQuizShowLiveRoomViewController, fetchedLivingStreamInfo, info);
     NSLog(@"fetchedLivingStreamInfo:%@",info);
+}
+
+CHOptimizedMethod1(self, void, TTFQuizShowLiveRoomViewController, showAnswerWithQuestionAnswerUnit, id, arg1){
+    CHSuper1(TTFQuizShowLiveRoomViewController, showAnswerWithQuestionAnswerUnit, arg1);
+    NSLog(@"showAnswerWithQuestionAnswerUnit:%@",arg1);
+    UIViewController *selfVC = (UIViewController *)self;
+    [selfVC.view bringSubviewToFront:self.talkboardViewController.view];
+}
+
+CHOptimizedMethod1(self, void, TTFQuizShowLiveRoomViewController, showQuestionWithQuestionAnswerUnit, id, arg1){
+    CHSuper1(TTFQuizShowLiveRoomViewController, showQuestionWithQuestionAnswerUnit, arg1);
+    NSLog(@"showQuestionWithQuestionAnswerUnit:%@",arg1);
+    UIViewController *selfVC = (UIViewController *)self;
+    [selfVC.view bringSubviewToFront:self.talkboardViewController.view];
 }
 
 CHDeclareClass(TTFQuestionStruct)
@@ -266,28 +284,17 @@ CHOptimizedMethod1(self, void, TTFQuestionAnswerUnit, submitAnswerWithOptions, i
     NSLog(@"submitAnswerWithOptions:%@",options);
 }
 
-CHDeclareClass(TTFQuestionAnswerView)
-
-CHOptimizedMethod1(self, TTFQuestionAnswerView *, TTFQuestionAnswerView, initWithFrame, CGRect, frame){
-    self = (TTFQuestionAnswerView *)CHSuper1(TTFQuestionAnswerView, initWithFrame, frame);
-    if (self) {
-        NSLog(@"initWithFrame->%@",self);
-        NSLog(@"initWithFrame->%@",((UIView *)self).subviews);
-    }
-    return self;
-}
-
-CHOptimizedMethod1(self, void, TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit, id, arg1){
-    CHSuper1(TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit, arg1);
-    NSLog(@"showAnswerWithQuestionAnswerUnit->%@",self);
-    NSLog(@"showAnswerWithQuestionAnswerUnit->%@",((UIView *)self).subviews);
-}
-
-CHOptimizedMethod1(self, void, TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit, id, arg1){
-    CHSuper1(TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit, arg1);
-    NSLog(@"showQuestionWithQuestionAnswerUnit->%@",self);
-    NSLog(@"showQuestionWithQuestionAnswerUnit->%@",((UIView *)self).subviews);
-}
+//CHDeclareClass(TTFQuestionAnswerView)
+//
+//CHOptimizedMethod1(self, void, TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit, id, arg1){
+//    CHSuper1(TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit, arg1);
+//    NSLog(@"showAnswerWithQuestionAnswerUnit:%@",arg1);
+//}
+//
+//CHOptimizedMethod1(self, void, TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit, id, arg1){
+//    CHSuper1(TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit, arg1);
+//    NSLog(@"showQuestionWithQuestionAnswerUnit:%@",arg1);
+//}
 
 CHDeclareClass(TTFTalkBoardContainerView)
 
@@ -338,10 +345,12 @@ CHConstructor{
     CHLoadLateClass(TTFQuestionStruct);
     CHLoadLateClass(TTFAnswerStruct);
     CHLoadLateClass(TTFQuestionAnswerUnit);
-    CHLoadLateClass(TTFQuestionAnswerView);
+    // CHLoadLateClass(TTFQuestionAnswerView);
     CHLoadLateClass(TTFTalkBoardContainerView);
     
     CHHook1(TTFQuizShowLiveRoomViewController, fetchedLivingStreamInfo);
+    CHHook1(TTFQuizShowLiveRoomViewController, showAnswerWithQuestionAnswerUnit);
+    CHHook1(TTFQuizShowLiveRoomViewController, showQuestionWithQuestionAnswerUnit);
     
     CHHook1(TTFQuestionAnswerUnit, setQuestion);
     CHHook1(TTFQuestionAnswerUnit, setAnswer);
@@ -352,9 +361,8 @@ CHConstructor{
     CHHook1(TTFQuestionAnswerUnit, setViewMoel);
     CHHook1(TTFQuestionAnswerUnit, submitAnswerWithOptions);
     
-    CHHook1(TTFQuestionAnswerView, initWithFrame);
-    CHHook1(TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit);
-    CHHook1(TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit);
+    // CHHook1(TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit);
+    // CHHook1(TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit);
     
     CHHook2(TTFTalkBoardContainerView, initWithFrame, viewModel);
     CHHook0(TTFTalkBoardContainerView, layoutSubviews);

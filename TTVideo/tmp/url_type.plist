@@ -6,10 +6,10 @@
 		<key>CFBundleTypeRole</key>
 		<string>Editor</string>
 		<key>CFBundleURLName</key>
-		<string>TTVideo</string>
+		<string>weixin</string>
 		<key>CFBundleURLSchemes</key>
 		<array>
-			<string>TTVideoDev</string>
+			<string>wxd96a4a9856e9fac6</string>
 		</array>
 	</dict>
 </array>

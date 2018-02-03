@@ -126,8 +126,8 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
         self.personalizeLabel = [[UILabel alloc] initWithFrame:self.personalizeView.bounds];
         self.personalizeLabel.textAlignment = NSTextAlignmentCenter;
         self.personalizeLabel.numberOfLines = 0;
-        self.personalizeLabel.font = [UIFont systemFontOfSize:22];
-        self.personalizeLabel.textColor = [UIColor whiteColor];
+        self.personalizeLabel.font = [UIFont systemFontOfSize:20];
+        self.personalizeLabel.textColor = [UIColor colorWithRed:251.0/255.0 green:0.0 blue:112.0/255.0 alpha:0.5];
         [self.personalizeView addSubview:self.personalizeLabel];
         
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(requestDataFromServer:)];
