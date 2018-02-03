@@ -201,15 +201,15 @@ CHOptimizedMethod1(self, void, TTFQuizShowLiveRoomViewController, fetchedLivingS
 CHOptimizedMethod1(self, void, TTFQuizShowLiveRoomViewController, showAnswerWithQuestionAnswerUnit, id, arg1){
     CHSuper1(TTFQuizShowLiveRoomViewController, showAnswerWithQuestionAnswerUnit, arg1);
     NSLog(@"showAnswerWithQuestionAnswerUnit:%@",arg1);
-    UIViewController *selfVC = (UIViewController *)self;
-    [selfVC.view bringSubviewToFront:self.talkboardViewController.view];
+    UIView *superView = [self.talkboardViewController.view superview];
+    [superView bringSubviewToFront:self.talkboardViewController.view];
 }
 
 CHOptimizedMethod1(self, void, TTFQuizShowLiveRoomViewController, showQuestionWithQuestionAnswerUnit, id, arg1){
     CHSuper1(TTFQuizShowLiveRoomViewController, showQuestionWithQuestionAnswerUnit, arg1);
     NSLog(@"showQuestionWithQuestionAnswerUnit:%@",arg1);
-    UIViewController *selfVC = (UIViewController *)self;
-    [selfVC.view bringSubviewToFront:self.talkboardViewController.view];
+    UIView *superView = [self.talkboardViewController.view superview];
+    [superView bringSubviewToFront:self.talkboardViewController.view];
 }
 
 CHDeclareClass(TTFQuestionStruct)
