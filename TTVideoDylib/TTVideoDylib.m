@@ -171,6 +171,8 @@ static __attribute__((constructor)) void entry(){
 @property(strong, nonatomic) UIView *qaContainerView;
 
 - (instancetype)initWithFrame:(CGRect)frame;
+- (void)showAnswerWithQuestionAnswerUnit:(id)arg1;
+- (void)showQuestionWithQuestionAnswerUnit:(id)arg1;
 
 @end
 
@@ -269,9 +271,22 @@ CHDeclareClass(TTFQuestionAnswerView)
 CHOptimizedMethod1(self, TTFQuestionAnswerView *, TTFQuestionAnswerView, initWithFrame, CGRect, frame){
     self = (TTFQuestionAnswerView *)CHSuper1(TTFQuestionAnswerView, initWithFrame, frame);
     if (self) {
-        self.specialQuestionHintContainerView.hidden = YES;
+        NSLog(@"initWithFrame->%@",self);
+        NSLog(@"initWithFrame->%@",((UIView *)self).subviews);
     }
     return self;
+}
+
+CHOptimizedMethod1(self, void, TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit, id, arg1){
+    CHSuper1(TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit, arg1);
+    NSLog(@"showAnswerWithQuestionAnswerUnit->%@",self);
+    NSLog(@"showAnswerWithQuestionAnswerUnit->%@",((UIView *)self).subviews);
+}
+
+CHOptimizedMethod1(self, void, TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit, id, arg1){
+    CHSuper1(TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit, arg1);
+    NSLog(@"showQuestionWithQuestionAnswerUnit->%@",self);
+    NSLog(@"showQuestionWithQuestionAnswerUnit->%@",((UIView *)self).subviews);
 }
 
 CHDeclareClass(TTFTalkBoardContainerView)
@@ -338,6 +353,8 @@ CHConstructor{
     CHHook1(TTFQuestionAnswerUnit, submitAnswerWithOptions);
     
     CHHook1(TTFQuestionAnswerView, initWithFrame);
+    CHHook1(TTFQuestionAnswerView, showAnswerWithQuestionAnswerUnit);
+    CHHook1(TTFQuestionAnswerView, showQuestionWithQuestionAnswerUnit);
     
     CHHook2(TTFTalkBoardContainerView, initWithFrame, viewModel);
     CHHook0(TTFTalkBoardContainerView, layoutSubviews);
