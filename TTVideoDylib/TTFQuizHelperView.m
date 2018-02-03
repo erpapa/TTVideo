@@ -116,16 +116,17 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
         self.optionView3.hidden = YES;
         [self.scrollView addSubview:self.optionView3];
         
-        self.personalizeView = [[UIView alloc] initWithFrame:CGRectMake(8, 25, CGRectGetWidth(self.frame) - 16, 46 * 3 - 10)];
-        self.personalizeView.backgroundColor = [UIColor colorWithRed:124.0/255.0 green:14.0/255.0 blue:244.0/255.0 alpha:0.5];
-        self.personalizeView.layer.cornerRadius = 10;
+        self.personalizeView = [[UIView alloc] initWithFrame:CGRectMake(12, 25, CGRectGetWidth(self.frame) - 24, 82)];
+        self.personalizeView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.15];
+        self.personalizeView.layer.cornerRadius = 8;
         self.personalizeView.layer.masksToBounds = YES;
         self.personalizeView.hidden = YES;
         [self.scrollView addSubview:self.personalizeView];
 
         self.personalizeLabel = [[UILabel alloc] initWithFrame:self.personalizeView.bounds];
+        self.personalizeLabel.textAlignment = NSTextAlignmentCenter;
         self.personalizeLabel.numberOfLines = 0;
-        self.personalizeLabel.font = [UIFont systemFontOfSize:16];
+        self.personalizeLabel.font = [UIFont systemFontOfSize:22];
         self.personalizeLabel.textColor = [UIColor whiteColor];
         [self.personalizeView addSubview:self.personalizeLabel];
         
@@ -196,17 +197,15 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
         NSString *title0 = [option0 objectForKey:@"title"];
         NSString *title1 = [option1 objectForKey:@"title"];
         NSString *title2 = [option2 objectForKey:@"title"];
-        if ([title1 hasPrefix:@"NONE"] && [title2 hasPrefix:@"NONE"]) {
+        if ([title1 hasPrefix:@"NONE"] || [title2 hasPrefix:@"NONE"]) {
             self.optionView0.hidden = YES;
             self.optionView1.hidden = YES;
             self.optionView2.hidden = YES;
             self.optionView3.hidden = YES;
             self.personalizeView.hidden = NO;
-            self.personalizeView.frame = CGRectMake(8, CGRectGetMaxY(self.questionLabel.frame) + 12, CGRectGetWidth(self.frame) - 16, 46 * 3 - 10);
-            self.personalizeLabel.frame = self.personalizeView.bounds;
+            self.personalizeView.frame = CGRectMake(12, CGRectGetMaxY(self.questionLabel.frame) + 12, CGRectGetWidth(self.frame) - 24, 82);
+            self.personalizeLabel.frame = CGRectInset(self.personalizeView.bounds, 5, 5);
             self.personalizeLabel.text = title0;
-            [self.personalizeLabel sizeToFit];
-            self.personalizeLabel.frame = CGRectMake(0, 0, CGRectGetWidth(self.personalizeView.bounds), self.personalizeLabel.bounds.size.height);
             self.scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(self.personalizeView.frame) + 18);
             return;
         }
