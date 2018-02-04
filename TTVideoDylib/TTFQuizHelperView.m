@@ -207,15 +207,18 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
             self.personalizeLabel.frame = CGRectInset(self.personalizeView.bounds, 5, 5);
             if (title0.length <= 18) {
                 NSString *titleString = [title0 stringByReplacingOccurrencesOfString:@"|-|" withString:@"<->"];
+                self.personalizeLabel.textAlignment = NSTextAlignmentCenter;
                 self.personalizeLabel.attributedText = nil;
                 self.personalizeLabel.text = titleString;
             } else {
                 NSString *titleString = [title0 stringByReplacingOccurrencesOfString:@"|-|" withString:@"\n"];
                 NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:titleString];
                 NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+                paragraphStyle.alignment = NSTextAlignmentLeft;
                 paragraphStyle.lineSpacing = 8.0;
                 paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping; // 分割模式
                 [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [titleString length])];
+                self.personalizeLabel.textAlignment = NSTextAlignmentLeft;
                 self.personalizeLabel.text = nil;
                 self.personalizeLabel.attributedText = attributedString;
             }
