@@ -116,7 +116,7 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
         self.optionView3.hidden = YES;
         [self.scrollView addSubview:self.optionView3];
         
-        self.personalizeView = [[UIView alloc] initWithFrame:CGRectMake(12, 25, CGRectGetWidth(self.frame) - 24, 82)];
+        self.personalizeView = [[UIView alloc] initWithFrame:CGRectMake(12, 25, CGRectGetWidth(self.frame) - 24, 100)];
         self.personalizeView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.15];
         self.personalizeView.layer.cornerRadius = 8;
         self.personalizeView.layer.masksToBounds = YES;
@@ -127,7 +127,7 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
         self.personalizeLabel.textAlignment = NSTextAlignmentCenter;
         self.personalizeLabel.numberOfLines = 0;
         self.personalizeLabel.font = [UIFont systemFontOfSize:20];
-        self.personalizeLabel.textColor = [UIColor colorWithRed:251.0/255.0 green:0.0 blue:112.0/255.0 alpha:0.5];
+        self.personalizeLabel.textColor = [UIColor colorWithRed:252/255.0 green:217/255.0 blue:28/255.0 alpha:1.0];
         [self.personalizeView addSubview:self.personalizeLabel];
         
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(requestDataFromServer:)];
@@ -203,9 +203,22 @@ NSInteger const kTTFQuizHelperViewTag = 10041004;
             self.optionView2.hidden = YES;
             self.optionView3.hidden = YES;
             self.personalizeView.hidden = NO;
-            self.personalizeView.frame = CGRectMake(12, CGRectGetMaxY(self.questionLabel.frame) + 12, CGRectGetWidth(self.frame) - 24, 82);
+            self.personalizeView.frame = CGRectMake(12, CGRectGetMaxY(self.questionLabel.frame) + 12, CGRectGetWidth(self.frame) - 24, 100);
             self.personalizeLabel.frame = CGRectInset(self.personalizeView.bounds, 5, 5);
-            self.personalizeLabel.text = title0;
+            if (title0.length <= 24) {
+                NSString *titleString = [title0 stringByReplacingOccurrencesOfString:@"|-|" withString:@">---<"];
+                self.personalizeLabel.attributedText = nil;
+                self.personalizeLabel.text = titleString;
+            } else {
+                NSString *titleString = [title0 stringByReplacingOccurrencesOfString:@"|-|" withString:@"\n"];
+                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:titleString];
+                NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+                paragraphStyle.lineSpacing = 8.0;
+                paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping; // 分割模式
+                [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [titleString length])];
+                self.personalizeLabel.text = nil;
+                self.personalizeLabel.attributedText = attributedString;
+            }
             self.scrollView.contentSize = CGSizeMake(self.frame.size.width, CGRectGetMaxY(self.personalizeView.frame) + 18);
             return;
         }

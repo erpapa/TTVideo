@@ -185,7 +185,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 {
     self.currentTimeInterval = [[NSDate date] timeIntervalSince1970] * 1000;
 
-    NSString *wdcallbackString = [NSString stringWithFormat:@"jQuery321007116257213056087_%ld",self.timeInterval];
+    NSString *wdcallbackString = [NSString stringWithFormat:@"jQuery321007116257213056087_%ld",(long)self.timeInterval];
     NSString *urlString = [NSString stringWithFormat:@"http://140.143.49.31/api/ans2?key=xigua&wdcallback=%@&_=%ld",wdcallbackString,(long)self.currentTimeInterval];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
