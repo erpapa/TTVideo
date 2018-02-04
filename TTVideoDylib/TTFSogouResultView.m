@@ -2,13 +2,13 @@
 //  TTFSogouResultView.m
 //  TTVideoDylib
 //
-//  Created by huyong on 2018/1/21.
+//  Created by erpapa on 2018/1/21.
 //  Copyright © 2018年 erpapa. All rights reserved.
 //
 
 #import "TTFSogouResultView.h"
 #import "TTTAttributedLabel.h"
-#import "TTFPoPWebView.h"
+#import "TTFPopupWebView.h"
 
 NSInteger const kTTFSogouResultViewTag = 10241024;
 NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdentifier";
@@ -302,7 +302,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 {
     NSLog(@"didSelectLinkWithURL:%@",url.absoluteString);
     
-    TTFPoPWebView *webView = [[TTFPoPWebView alloc] initWithURL:url];
+    TTFPopupWebView *webView = [[TTFPopupWebView alloc] initWithURL:url];
     [webView show];
 }
 
@@ -312,7 +312,7 @@ didLongPressLinkWithURL:(NSURL *)url
 {
     NSLog(@"didLongPressLinkWithURL:%@",url.absoluteString);
     
-    TTFPoPWebView *webView = [[TTFPoPWebView alloc] initWithURL:url];
+    TTFPopupWebView *webView = [[TTFPopupWebView alloc] initWithURL:url];
     [webView show];
 }
 

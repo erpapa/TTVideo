@@ -2,14 +2,14 @@
 //  TTFPoPWebView.m
 //  TTVideoDylib
 //
-//  Created by huyong on 2018/1/22.
+//  Created by erpapa on 2018/1/22.
 //  Copyright © 2018年 erpapa. All rights reserved.
 //
 
-#import "TTFPoPWebView.h"
+#import "TTFPopupWebView.h"
 #import <WebKit/WebKit.h>
 
-@interface TTFPoPWebView () <WKNavigationDelegate, WKUIDelegate>
+@interface TTFPopupWebView () <WKNavigationDelegate, WKUIDelegate>
 
 @property (nonatomic, strong) NSURL *url;
 @property (nonatomic, strong) UIView *toolBar;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation TTFPoPWebView
+@implementation TTFPopupWebView
 
 - (instancetype)initWithURL:(NSURL *)url
 {

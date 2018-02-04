@@ -1,10 +1,8 @@
-//  weibo: http://weibo.com/xiaoqing28
-//  blog:  http://www.alonemonkey.com
 //
 //  TTVideoDylib.m
 //  TTVideoDylib
 //
-//  Created by huyong on 2018/1/21.
+//  Created by erpapa on 2018/1/21.
 //  Copyright (c) 2018年 erpapa. All rights reserved.
 //
 

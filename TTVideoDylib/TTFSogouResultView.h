@@ -2,7 +2,7 @@
 //  TTFSogouResultView.h
 //  TTVideoDylib
 //
-//  Created by huyong on 2018/1/21.
+//  Created by erpapa on 2018/1/21.
 //  Copyright © 2018年 erpapa. All rights reserved.
 //
 
