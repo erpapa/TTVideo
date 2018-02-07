@@ -136,7 +136,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 
 @end
 
-@interface TTFSogouResultView () <UITableViewDataSource, UITableViewDelegate,TTTAttributedLabelDelegate>
+@interface TTFSogouResultView () <UITableViewDataSource, UITableViewDelegate,TTTAttributedLabelDelegate, NSURLSessionDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataArray;
@@ -144,6 +144,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 @property (nonatomic, strong) TTFSogouTableViewCell *heightForCell;
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
 @property (nonatomic, assign) NSInteger timeInterval;
 @property (nonatomic, assign) NSInteger currentTimeInterval;
 
@@ -176,7 +177,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
         [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
         self.timeInterval = [[NSDate date] timeIntervalSince1970] * 1000;
         self.currentTimeInterval = self.timeInterval;
-        
+        self.operationQueue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
@@ -185,7 +186,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 {
     self.currentTimeInterval = [[NSDate date] timeIntervalSince1970] * 1000;
 
-    NSString *wdcallbackString = [NSString stringWithFormat:@"jQuery2000030869554261168664_%ld",(long)self.timeInterval];
+    NSString *wdcallbackString = [NSString stringWithFormat:@"jQuery20009095614040856467_%ld",(long)self.timeInterval];
     NSString *urlString = [NSString stringWithFormat:@"https://wdpush.sogoucdn.com/api/anspush?key=xigua&id=shoudong_bwyx_%ld,android_bwyx_%ld&wdcallback=%@&_=%ld",(long)self.currentTimeInterval,(long)self.currentTimeInterval,wdcallbackString,(long)self.currentTimeInterval];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -195,11 +196,13 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
     [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
     [request setValue:@"en-us" forHTTPHeaderField:@"Accept-Language"];
     [request setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
+    [request setValue:@"APP-SGS-ID=f871a9e02fed585362d1805a7472ddbed3f4db93d4ef" forHTTPHeaderField:@"Cookie"];
     [request setValue:@"https://assistant.sogoucdn.com/v5/cheat-sheet?channel=bwyx" forHTTPHeaderField:@"Referer"];
-    [request setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"8jlMRbGeh9M;c=2;r=1063486087" forHTTPHeaderField:@"X-Tingyun-Id"];
     [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
-    [request setValue:@"Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Mobile/14B100 Sogousearch/Ios/5.9.8" forHTTPHeaderField:@"User-Agent"];
-    NSURLSession *session = [NSURLSession sharedSession];
+    [request setValue:@"Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Mobile/14B100 Sogousearch/Ios/5.9.9" forHTTPHeaderField:@"User-Agent"];
+    // NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:self.operationQueue];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"error:%@",error);
@@ -216,13 +219,14 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
         NSDictionary *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         if ([object isKindOfClass:[NSDictionary class]]) {
             NSString *base64String = [object objectForKey:@"result"]; // base64
+            if (base64String.length == 0) return;
             NSData *base64Data = [[NSData alloc] initWithBase64EncodedString:base64String options:0]; // decode
             NSArray *resultArray = [NSJSONSerialization JSONObjectWithData:base64Data options:0 error:&error];
             if ([resultArray isKindOfClass:[NSArray class]]) {
                 NSMutableArray *dataArray = [NSMutableArray array];
                 for (NSString *objectString in resultArray) {
                     NSData *objectData = [objectString dataUsingEncoding:NSUTF8StringEncoding];
-                    if (jsonData == nil) {
+                    if (objectData == nil) {
                         continue;
                     }
                     NSDictionary *objectDict = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:nil];
@@ -315,6 +319,27 @@ didLongPressLinkWithURL:(NSURL *)url
     
     TTFPopupWebView *webView = [[TTFPopupWebView alloc] initWithURL:url];
     [webView show];
+}
+
+#pragma mark -----NSURLSessionTaskDelegate-----
+//NSURLAuthenticationChallenge 中的protectionSpace对象存放了服务器返回的证书信息
+//如何处理证书?(使用、忽略、拒绝。。)
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler//通过调用block，来告诉NSURLSession要不要收到这个证书
+{
+    NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+    NSURLCredential *credential = nil;
+    // 如果是请求证书信任，我们再来处理，其他的不需要处理
+    if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
+        credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+        if (credential) {
+            disposition = NSURLSessionAuthChallengeUseCredential;
+        } else {
+            disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+        }
+    }
+    if (completionHandler) {
+        completionHandler(disposition, credential);
+    }
 }
 
 - (void)layoutSubviews
