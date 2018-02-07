@@ -216,7 +216,7 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
         NSDictionary *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         if ([object isKindOfClass:[NSDictionary class]]) {
             NSString *base64String = [object objectForKey:@"result"]; // base64
-            NSData *base64Data = [[NSData alloc] initWithBase64EncodedString:resultString options:0]; // decode
+            NSData *base64Data = [[NSData alloc] initWithBase64EncodedString:base64String options:0]; // decode
             NSArray *resultArray = [NSJSONSerialization JSONObjectWithData:base64Data options:0 error:&error];
             if ([resultArray isKindOfClass:[NSArray class]]) {
                 NSMutableArray *dataArray = [NSMutableArray array];
