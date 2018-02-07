@@ -185,17 +185,17 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
 {
     self.currentTimeInterval = [[NSDate date] timeIntervalSince1970] * 1000;
 
-    NSString *wdcallbackString = [NSString stringWithFormat:@"jQuery321007116257213056087_%ld",(long)self.timeInterval];
-    NSString *urlString = [NSString stringWithFormat:@"http://140.143.49.31/api/ans2?key=xigua&wdcallback=%@&_=%ld",wdcallbackString,(long)self.currentTimeInterval];
+    NSString *wdcallbackString = [NSString stringWithFormat:@"jQuery2000030869554261168664_%ld",(long)self.timeInterval];
+    NSString *urlString = [NSString stringWithFormat:@"https://wdpush.sogoucdn.com/api/anspush?key=xigua&id=shoudong_bwyx_%ld,android_bwyx_%ld&wdcallback=%@&_=%ld",(long)self.currentTimeInterval,(long)self.currentTimeInterval,wdcallbackString,(long)self.currentTimeInterval];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     // GET请求
     request.HTTPMethod = @"GET";
     // 将需要的信息放入请求头
     [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"zh-cn" forHTTPHeaderField:@"Accept-Language"];
+    [request setValue:@"en-us" forHTTPHeaderField:@"Accept-Language"];
     [request setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
-    [request setValue:@"http://nb.sa.sogou.com/" forHTTPHeaderField:@"Referer"];
+    [request setValue:@"https://assistant.sogoucdn.com/v5/cheat-sheet?channel=bwyx" forHTTPHeaderField:@"Referer"];
     [request setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
     [request setValue:@"Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X) AppleWebKit/602.2.14 (KHTML, like Gecko) Mobile/14B100 Sogousearch/Ios/5.9.8" forHTTPHeaderField:@"User-Agent"];
@@ -211,12 +211,13 @@ NSString *const kTTFSogouTableViewCellIdentifier = @"kTTFSogouTableViewCellIdent
             repResult = [repResult substringWithRange:NSMakeRange(1, repResult.length - 2)];
         }
         NSData *jsonData = [repResult dataUsingEncoding:NSUTF8StringEncoding];
-        if (jsonData == nil) {
-            return;
-        }
+        if (jsonData == nil) return;
+        
         NSDictionary *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         if ([object isKindOfClass:[NSDictionary class]]) {
-            NSArray *resultArray = [object objectForKey:@"result"];
+            NSString *base64String = [object objectForKey:@"result"]; // base64
+            NSData *base64Data = [[NSData alloc] initWithBase64EncodedString:resultString options:0]; // decode
+            NSArray *resultArray = [NSJSONSerialization JSONObjectWithData:base64Data options:0 error:&error];
             if ([resultArray isKindOfClass:[NSArray class]]) {
                 NSMutableArray *dataArray = [NSMutableArray array];
                 for (NSString *objectString in resultArray) {
